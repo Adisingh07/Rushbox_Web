@@ -267,44 +267,228 @@ h1{
   margin:0;
 }
 
-/* Screenshots Showcase Carousel */
-.screenshots-wrapper{
-  padding:24px 20px;
+/* 3D Center-Stage Looping Carousel Showcase */
+.showcase-section{
+  position:relative;
+  margin-top:42px;
+}
+.carousel-container{
+  position:relative;
+  width:100%;
+  max-width:1040px;
+  margin:0 auto;
+  padding:10px 0 14px;
+  user-select:none;
+}
+.carousel-viewport{
+  position:relative;
+  width:100%;
+  height:540px;
+  perspective:1200px;
+  perspective-origin:center center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:visible;
+}
+.carousel-track{
+  position:relative;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.carousel-slide{
+  position:absolute;
+  width:min(470px, 86vw);
+  height:510px;
   border-radius:32px;
-  background:var(--card-bg);
-  box-shadow:12px 12px 28px var(--sd),-12px -12px 28px var(--sl);
+  background:rgba(251,251,251,.85);
+  box-shadow:14px 14px 34px var(--sd), -14px -14px 34px var(--sl);
+  backdrop-filter:blur(18px);
+  padding:16px 16px 20px;
+  display:flex;
+  flex-direction:column;
+  cursor:pointer;
+  transition:all .55s cubic-bezier(.25,1,.5,1);
+  transform-style:preserve-3d;
+  will-change:transform, opacity, filter;
 }
-.screenshots-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
+
+/* Slide 3D Positions */
+.carousel-slide.active{
+  transform:translateX(0) scale(1) translateZ(0);
+  opacity:1;
+  z-index:10;
+  cursor:default;
+  filter:none;
+  box-shadow:0 22px 50px rgba(38,55,70,.18), 12px 12px 28px var(--sd), -12px -12px 28px var(--sl);
 }
-.screenshot-item{
-  border-radius:20px;
+.carousel-slide.prev{
+  transform:translateX(calc(-58% - 15px)) scale(.82) translateZ(-80px) rotateY(12deg);
+  opacity:.58;
+  z-index:5;
+  filter:blur(.6px);
+}
+.carousel-slide.next{
+  transform:translateX(calc(58% + 15px)) scale(.82) translateZ(-80px) rotateY(-12deg);
+  opacity:.58;
+  z-index:5;
+  filter:blur(.6px);
+}
+.carousel-slide.hidden{
+  transform:translateX(0) scale(.65) translateZ(-160px);
+  opacity:0;
+  z-index:1;
+  pointer-events:none;
+}
+
+/* Slide Media Container (Fixes Aspect Ratio differences) */
+.slide-media-box{
+  flex:1;
+  width:100%;
+  min-height:0;
+  border-radius:24px;
+  background:linear-gradient(145deg,#edf8ff,#d9effc);
+  box-shadow:inset 3px 3px 8px rgba(119,157,181,.2), inset -3px -3px 8px rgba(255,255,255,.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
   overflow:hidden;
-  background:linear-gradient(145deg,#fff,var(--ice));
-  box-shadow:6px 6px 16px var(--sd),-6px -6px 16px var(--sl);
-  transition:transform .28s ease, box-shadow .28s ease;
   position:relative;
 }
-.screenshot-item:hover{
-  transform:translateY(-6px) scale(1.02);
-  box-shadow:10px 10px 24px var(--sd);
-}
-.screenshot-item img{
-  width:100%;
+.slide-media-box img{
+  max-width:100%;
+  max-height:100%;
+  width:auto;
   height:auto;
-  display:block;
-  object-fit:cover;
+  object-fit:contain;
+  border-radius:18px;
+  box-shadow:0 10px 24px rgba(0,0,0,.15);
+  transition:transform .35s ease;
 }
-.screenshot-label{
-  padding:10px;
+.carousel-slide.active:hover .slide-media-box img{
+  transform:scale(1.03);
+}
+
+.slide-media-box.portrait img{
+  max-height:340px;
+  border:2px solid rgba(255,255,255,.75);
+}
+.slide-media-box.landscape img{
+  max-height:290px;
+  width:100%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,.75);
+}
+
+/* Slide Caption */
+.slide-caption{
+  padding:14px 10px 0;
   text-align:center;
-  font-size:12.5px;
+}
+.slide-badge{
+  display:inline-block;
+  font-size:11px;
   font-weight:800;
-  color:#2a485f;
+  letter-spacing:.6px;
+  text-transform:uppercase;
+  color:var(--accent);
+  background:rgba(255,255,255,.92);
+  padding:4px 12px;
+  border-radius:14px;
+  box-shadow:2px 2px 6px var(--sd), -2px -2px 6px var(--sl);
+  margin-bottom:6px;
+}
+.slide-caption h3{
+  margin:0 0 4px;
+  font-size:18px;
+  font-weight:900;
+  color:var(--dark-blue);
+  letter-spacing:-.3px;
+}
+.slide-caption p{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.5;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+/* Navigation Arrow Buttons */
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:50px;
+  height:50px;
+  border-radius:50%;
   background:rgba(255,255,255,.9);
-  border-top:1px solid rgba(119,157,181,.18);
+  border:none;
+  font-size:26px;
+  font-weight:700;
+  color:var(--dark-blue);
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  box-shadow:6px 6px 16px var(--sd), -6px -6px 16px var(--sl);
+  backdrop-filter:blur(8px);
+  z-index:25;
+  transition:all .22s ease;
+}
+.carousel-btn:hover{
+  background:#fff;
+  transform:translateY(-50%) scale(1.1);
+  box-shadow:8px 8px 22px var(--sd);
+  color:#102538;
+}
+.carousel-btn.prev{left:6px}
+.carousel-btn.next{right:6px}
+
+/* Dots Navigation */
+.carousel-dots{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+}
+.carousel-dot{
+  width:12px;
+  height:12px;
+  border-radius:6px;
+  background:rgba(119,157,181,.35);
+  border:none;
+  cursor:pointer;
+  transition:all .3s ease;
+  padding:0;
+}
+.carousel-dot.active{
+  width:34px;
+  background:linear-gradient(135deg,#316688,#1c4a66);
+  box-shadow:0 3px 8px rgba(49,102,136,.4);
+}
+
+/* Auto-scroll progress line */
+.carousel-progress{
+  width:140px;
+  height:4px;
+  background:rgba(119,157,181,.2);
+  border-radius:2px;
+  margin:12px auto 0;
+  overflow:hidden;
+}
+.carousel-progress-bar{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,var(--accent),#884cdb);
+  border-radius:2px;
+  transition:width .08s linear;
 }
 
 /* Game Catalog Grid */
@@ -696,35 +880,83 @@ h1{
       </div>
     </section>
 
-    <!-- App Screenshots Showcase -->
-    <section class="section">
+    <!-- 3D Center-Stage Looping Showcase Carousel -->
+    <section class="section showcase-section">
       <div class="section-header">
         <h2 class="section-title">App Highlights & Gameplay</h2>
-        <p class="section-subtitle">A glimpse inside the smooth, vibrant worlds of Rush Box</p>
+        <p class="section-subtitle">Swipe or let the auto-scrolling preview take you inside Rush Box</p>
       </div>
-      <div class="screenshots-wrapper">
-        <div class="screenshots-grid">
-          
-          <div class="screenshot-item">
-            <img src="/assets/01.png" alt="Rush Box Screenshot 1" loading="lazy">
-            <div class="screenshot-label">Katana Runes & Fruit Trail</div>
-          </div>
 
-          <div class="screenshot-item">
-            <img src="/assets/02.png" alt="Rush Box Screenshot 2" loading="lazy">
-            <div class="screenshot-label">3D Arrow Tap Spatial Puzzles</div>
-          </div>
+      <div class="carousel-container" id="showcaseCarousel">
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carouselTrack">
+            
+            <!-- Slide 1: Rush Box Library (Portrait 01.png) -->
+            <div class="carousel-slide active" data-index="0" onclick="handleSlideClick(0)">
+              <div class="slide-media-box portrait">
+                <img src="/assets/01.png" alt="Rush Box Instant Play Arcade Hub" loading="eager">
+              </div>
+              <div class="slide-caption">
+                <span class="slide-badge">🎮 Instant Arcade Hub</span>
+                <h3>Rush Box Game Library</h3>
+                <p>Unified lightweight arcade launcher with 60+ FPS native rendering & fast switching</p>
+              </div>
+            </div>
 
-          <div class="screenshot-item">
-            <img src="/assets/03.png" alt="Rush Box Screenshot 3" loading="lazy">
-            <div class="screenshot-label">Tactical 3x3 & 4x4 AI Arena</div>
-          </div>
+            <!-- Slide 2: Tic Tac Toe (Portrait 02.png) -->
+            <div class="carousel-slide next" data-index="1" onclick="handleSlideClick(1)">
+              <div class="slide-media-box portrait">
+                <img src="/assets/02.png" alt="Tic Tac Toe AI Arena" loading="lazy">
+              </div>
+              <div class="slide-caption">
+                <span class="slide-badge">⭕ Classic & Tactical</span>
+                <h3>Tic Tac Toe AI Arena</h3>
+                <p>Classic 3x3 and 4x4 boards with 3-tier intelligent AI & timed local PvP matches</p>
+              </div>
+            </div>
 
-          <div class="screenshot-item">
-            <img src="/assets/04.png" alt="Rush Box Screenshot 4" loading="lazy">
-            <div class="screenshot-label">Knife Throw Precision Targets</div>
-          </div>
+            <!-- Slide 3: Arrow Tap Out (Landscape 03.png) -->
+            <div class="carousel-slide hidden" data-index="2" onclick="handleSlideClick(2)">
+              <div class="slide-media-box landscape">
+                <img src="/assets/03.png" alt="Arrow Tap Out Spatial Puzzle" loading="lazy">
+              </div>
+              <div class="slide-caption">
+                <span class="slide-badge">➡️ 3D Spatial Puzzle</span>
+                <h3>Arrow Tap Out Trail</h3>
+                <p>Untangle intricate multi-directional arrow boards across themed chapters & levels</p>
+              </div>
+            </div>
 
+            <!-- Slide 4: Fruit Slice (Landscape 04.png) -->
+            <div class="carousel-slide prev" data-index="3" onclick="handleSlideClick(3)">
+              <div class="slide-media-box landscape">
+                <img src="/assets/04.png" alt="Fruit Slice Katana Runes" loading="lazy">
+              </div>
+              <div class="slide-caption">
+                <span class="slide-badge">🍉 Katana Runes Action</span>
+                <h3>Fruit Slice Rush</h3>
+                <p>Slice flying fruits, trigger devastating combo streaks, and dodge explosives</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Navigation Arrow Buttons -->
+        <button type="button" class="carousel-btn prev" onclick="prevSlide()" aria-label="Previous Slide">&lsaquo;</button>
+        <button type="button" class="carousel-btn next" onclick="nextSlide()" aria-label="Next Slide">&rsaquo;</button>
+
+        <!-- Indicator Dots -->
+        <div class="carousel-dots" id="carouselDots">
+          <button type="button" class="carousel-dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+          <button type="button" class="carousel-dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+          <button type="button" class="carousel-dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+          <button type="button" class="carousel-dot" onclick="goToSlide(3)" aria-label="Slide 4"></button>
+        </div>
+
+        <!-- Auto-scroll countdown progress line -->
+        <div class="carousel-progress">
+          <div class="carousel-progress-bar" id="carouselProgressBar"></div>
         </div>
       </div>
     </section>
@@ -851,6 +1083,7 @@ h1{
       <a href="/privacy" class="footer-link">🔒 Privacy Policy</a>
       <a href="/terms" class="footer-link">📜 Terms of Service</a>
       <a href="/child-policy" class="footer-link">🧒 Child Privacy Policy</a>
+      <a href="/delete-account" class="footer-link" style="color:#dc2626;">🗑️ Delete Account</a>
     </div>
 
     <div class="footer-copy">
@@ -899,8 +1132,136 @@ h1{
   <span id="toastMsg">Link copied to clipboard!</span>
 </div>
 
-<!-- Interactive Scripts for Pi Link & Copy Handling -->
+<!-- Interactive Scripts for Pi Link & 3D Carousel Showcase -->
 <script>
+/* ============================================================
+   3D CENTER-STAGE LOOPING SHOWCASE CAROUSEL
+   ============================================================ */
+let currentSlide = 0;
+const totalSlides = 4;
+let autoSlideTimer = null;
+let progressTimer = null;
+let progressStartTime = 0;
+const slideDuration = 3800; // 3.8s per slide
+let isHovered = false;
+
+function updateCarousel() {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+
+  slides.forEach((slide) => {
+    const idx = parseInt(slide.getAttribute('data-index'), 10);
+    slide.classList.remove('active', 'prev', 'next', 'hidden');
+
+    if (idx === currentSlide) {
+      slide.classList.add('active');
+    } else if (idx === (currentSlide - 1 + totalSlides) % totalSlides) {
+      slide.classList.add('prev');
+    } else if (idx === (currentSlide + 1) % totalSlides) {
+      slide.classList.add('next');
+    } else {
+      slide.classList.add('hidden');
+    }
+  });
+
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentSlide);
+  });
+
+  resetProgressBar();
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+}
+
+function goToSlide(idx) {
+  if (idx !== currentSlide) {
+    currentSlide = idx;
+    updateCarousel();
+  }
+}
+
+function handleSlideClick(idx) {
+  if (idx !== currentSlide) {
+    goToSlide(idx);
+  }
+}
+
+function resetProgressBar() {
+  progressStartTime = Date.now();
+  const bar = document.getElementById('carouselProgressBar');
+  if (bar) bar.style.width = '0%';
+}
+
+function startAutoSlide() {
+  stopAutoSlide();
+  progressStartTime = Date.now();
+
+  progressTimer = setInterval(() => {
+    if (isHovered) return;
+    const elapsed = Date.now() - progressStartTime;
+    const pct = Math.min(100, (elapsed / slideDuration) * 100);
+    const bar = document.getElementById('carouselProgressBar');
+    if (bar) bar.style.width = pct + '%';
+  }, 40);
+
+  autoSlideTimer = setInterval(() => {
+    if (!isHovered) {
+      nextSlide();
+    }
+  }, slideDuration);
+}
+
+function stopAutoSlide() {
+  if (autoSlideTimer) clearInterval(autoSlideTimer);
+  if (progressTimer) clearInterval(progressTimer);
+  const bar = document.getElementById('carouselProgressBar');
+  if (bar) bar.style.width = '0%';
+}
+
+// Touch gesture / swipe handling
+const carouselElem = document.getElementById('showcaseCarousel');
+if (carouselElem) {
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  carouselElem.addEventListener('touchstart', (e) => {
+    isHovered = true;
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  carouselElem.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchEndX - touchStartX;
+    if (diff > 45) {
+      prevSlide();
+    } else if (diff < -45) {
+      nextSlide();
+    }
+    isHovered = false;
+    resetProgressBar();
+  }, { passive: true });
+
+  carouselElem.addEventListener('mouseenter', () => { isHovered = true; });
+  carouselElem.addEventListener('mouseleave', () => { isHovered = false; progressStartTime = Date.now(); });
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+  updateCarousel();
+  startAutoSlide();
+});
+
+/* ============================================================
+   PI BROWSER & GENERAL APP SCRIPTS
+   ============================================================ */
 function openPiBrowserHandler() {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   
@@ -968,10 +1329,14 @@ function trackPiLaunch() {
   showToast('Launching Pi Browser...');
 }
 
-// Close modal with ESC key
+// Keyboard controls
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closePiModal();
+  } else if (e.key === 'ArrowLeft') {
+    prevSlide();
+  } else if (e.key === 'ArrowRight') {
+    nextSlide();
   }
 });
 </script>

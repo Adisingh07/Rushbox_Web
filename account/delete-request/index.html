@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<meta name="theme-color" content="#69d0e9">
+
+<meta name="description" content="Rush Box Account & Data Deletion Guide — Step-by-step instructions on how to request account erasure, 10-day cancellation grace period, and permanent data removal.">
+<meta name="keywords" content="Rush Box, Delete Account, Data Deletion, Google Play Account Deletion, Account Erasure, Privacy, Rush Box Games">
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rush Box">
+<meta property="og:url" content="https://rushbox.in/account/delete-request">
+<meta property="og:title" content="Delete Account & Data Erasure Guide — Rush Box">
+<meta property="og:description" content="Step-by-step guide to delete your Rush Box account, manage cloud data erasure, and understand the 10-day cancellation grace period.">
+<meta property="og:image" content="https://rushbox.in/assets/logo.png">
+<meta property="og:image:secure_url" content="https://rushbox.in/assets/logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="Rush Box Logo">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Delete Account & Data Erasure Guide — Rush Box">
+<meta name="twitter:description" content="Step-by-step guide to delete your Rush Box account, manage cloud data erasure, and understand the 10-day cancellation grace period.">
+<meta name="twitter:image" content="https://rushbox.in/assets/logo.png">
+<title>Delete Account & Data Erasure Guide — Rush Box</title>
+<style>
+:root{
+  --blue:#C6E7FF;--ice:#D4F6FF;--white:#FBFBFB;--peach:#FFDDAE;
+  --text:#263746;--muted:#627789;--dark-blue:#192c3d;
+  --accent:#2b6386;--accent-purple:#884cdb;
+  --error:#dc2626;--error-bg:rgba(254,242,242,.85);--error-border:rgba(239,68,68,.3);
+  --success:#16a34a;--success-bg:rgba(240,253,244,.85);
+  --card-bg:rgba(251,251,251,.74);
+  --sd:rgba(119,157,181,.22);--sl:rgba(255,255,255,.94);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);
+  line-height:1.7;
+  background:
+    radial-gradient(circle at 10% 8%,rgba(255,255,255,.95),transparent 28%),
+    radial-gradient(circle at 90% 12%,rgba(255,221,174,.42),transparent 25%),
+    radial-gradient(circle at 50% 100%,rgba(198,231,255,.85),transparent 38%),
+    linear-gradient(145deg,var(--ice),var(--blue) 50%,#edfaff);
+}
+
+.page{
+  width:min(1020px,calc(100% - 32px));
+  margin:auto;
+  padding:32px 0 60px;
+}
+
+/* Header Nav */
+.header-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 24px;
+  border-radius:24px;
+  background:rgba(251,251,251,.65);
+  box-shadow:6px 6px 18px var(--sd),-6px -6px 18px var(--sl);
+  backdrop-filter:blur(12px);
+  margin-bottom:32px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--dark-blue);
+}
+.brand img{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  box-shadow:3px 3px 8px var(--sd);
+}
+.brand-name{
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:-.6px;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.nav-btn{
+  text-decoration:none;
+  padding:8px 16px;
+  border-radius:14px;
+  font-size:13.5px;
+  font-weight:700;
+  color:#33566e;
+  background:rgba(255,255,255,.7);
+  box-shadow:3px 3px 8px var(--sd),-3px -3px 8px var(--sl);
+  transition:all .2s ease;
+}
+.nav-btn:hover{
+  transform:translateY(-2px);
+  background:#fff;
+  color:#19354a;
+}
+.nav-btn.primary{
+  background:linear-gradient(135deg,#316688,#204b66);
+  color:#fff;
+  box-shadow:4px 4px 12px rgba(49,102,136,.35);
+}
+
+/* Hero Section */
+.hero{
+  text-align:center;
+  padding:48px 28px 40px;
+  border-radius:36px;
+  background:rgba(251,251,251,.74);
+  box-shadow:14px 14px 34px var(--sd),-14px -14px 34px var(--sl);
+  backdrop-filter:blur(15px);
+}
+.hero-logo{
+  width:84px;
+  height:84px;
+  margin:0 auto 18px;
+  border-radius:26px;
+  display:grid;place-items:center;
+  font-size:40px;
+  background:linear-gradient(145deg,#fee2e2,#fecaca);
+  box-shadow:8px 8px 18px var(--sd),-8px -8px 18px var(--sl);
+}
+.badge{
+  display:inline-block;
+  padding:6px 16px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  color:#b91c1c;
+  background:rgba(254,226,226,.9);
+  box-shadow:4px 4px 10px var(--sd),-4px -4px 10px var(--sl);
+  margin-bottom:14px;
+}
+h1{
+  margin:0;
+  font-size:clamp(32px,5.8vw,48px);
+  letter-spacing:-1.6px;
+  line-height:1.15;
+  color:var(--dark-blue);
+}
+.subtitle{
+  max-width:740px;
+  margin:14px auto 0;
+  font-size:16px;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+/* Alert Warning Card */
+.alert-card{
+  margin-top:30px;
+  padding:24px 26px;
+  border-radius:28px;
+  background:var(--error-bg);
+  border:1.5px solid var(--error-border);
+  box-shadow:8px 8px 22px var(--sd),-8px -8px 22px var(--sl);
+}
+.alert-card h3{
+  margin:0 0 10px;
+  font-size:18px;
+  font-weight:900;
+  color:#991b1b;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.alert-card p{
+  margin:0 0 12px;
+  font-size:14.5px;
+  color:#7f1d1d;
+  line-height:1.7;
+}
+.alert-card ul{
+  margin:0;
+  padding-left:22px;
+  color:#7f1d1d;
+  font-size:14px;
+}
+.alert-card ul li{
+  margin-bottom:6px;
+}
+
+/* General Sections */
+.section{
+  margin-top:34px;
+}
+.section-title{
+  margin:0 0 14px 8px;
+  font-size:21px;
+  font-weight:900;
+  letter-spacing:.3px;
+  color:var(--dark-blue);
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* Cards */
+.card{
+  padding:26px 28px;
+  border-radius:28px;
+  background:var(--card-bg);
+  box-shadow:9px 9px 22px var(--sd),-9px -9px 22px var(--sl);
+  backdrop-filter:blur(10px);
+}
+.card p{
+  margin:0 0 14px;
+  font-size:15px;
+  line-height:1.8;
+  color:#4f6578;
+}
+.card p:last-child{margin-bottom:0}
+
+/* Step-by-Step Flow */
+.steps-container{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.step-card{
+  display:flex;
+  gap:18px;
+  padding:20px;
+  border-radius:24px;
+  background:rgba(255,255,255,.75);
+  box-shadow:5px 5px 14px var(--sd),-5px -5px 14px var(--sl);
+  transition:transform .2s ease;
+}
+.step-card:hover{
+  transform:translateY(-2px);
+}
+.step-number{
+  width:44px;
+  height:44px;
+  min-width:44px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  font-size:18px;
+  font-weight:900;
+  background:linear-gradient(135deg,#316688,#1e4760);
+  color:#fff;
+  box-shadow:3px 3px 8px rgba(49,102,136,.3);
+}
+.step-content h4{
+  margin:0 0 6px;
+  font-size:16.5px;
+  font-weight:800;
+  color:var(--dark-blue);
+}
+.step-content p{
+  margin:0;
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.65;
+}
+.step-highlight{
+  display:inline-block;
+  background:#f1f5f9;
+  padding:2px 8px;
+  border-radius:8px;
+  font-family:monospace;
+  font-size:13px;
+  font-weight:700;
+  color:#1e293b;
+}
+
+/* Grace Period Info Box */
+.grace-card{
+  padding:22px 24px;
+  border-radius:24px;
+  background:var(--success-bg);
+  border:1.5px solid rgba(22,163,74,.3);
+  box-shadow:6px 6px 18px var(--sd),-6px -6px 18px var(--sl);
+  margin-top:18px;
+}
+.grace-card h4{
+  margin:0 0 8px;
+  font-size:16px;
+  font-weight:800;
+  color:#14532d;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.grace-card p{
+  margin:0;
+  font-size:14px;
+  color:#166534;
+  line-height:1.65;
+}
+
+/* Action CTA Banner */
+.action-box{
+  margin-top:34px;
+  padding:30px 28px;
+  border-radius:30px;
+  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(212,246,255,.7));
+  box-shadow:12px 12px 28px var(--sd),-12px -12px 28px var(--sl);
+  text-align:center;
+}
+.action-box h3{
+  margin:0 0 8px;
+  font-size:22px;
+  font-weight:900;
+  color:var(--dark-blue);
+}
+.action-box p{
+  margin:0 auto 20px;
+  max-width:640px;
+  font-size:14.5px;
+  color:var(--muted);
+}
+.action-btns{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 24px;
+  border-radius:18px;
+  font-size:14.5px;
+  font-weight:800;
+  text-decoration:none;
+  transition:all .22s ease;
+}
+.btn.primary{
+  background:linear-gradient(135deg,#dc2626,#991b1b);
+  color:#fff;
+  box-shadow:5px 5px 16px rgba(220,38,38,.35);
+}
+.btn.primary:hover{
+  transform:translateY(-2px);
+  box-shadow:7px 7px 22px rgba(220,38,38,.45);
+}
+.btn.secondary{
+  background:rgba(255,255,255,.85);
+  color:#31566d;
+  box-shadow:4px 4px 12px var(--sd),-4px -4px 12px var(--sl);
+}
+.btn.secondary:hover{
+  transform:translateY(-2px);
+  background:#fff;
+  color:#19354a;
+}
+
+/* FAQ Cards */
+.faq-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+.faq-card{
+  padding:20px;
+  border-radius:24px;
+  background:var(--card-bg);
+  box-shadow:6px 6px 18px var(--sd),-6px -6px 18px var(--sl);
+}
+.faq-card strong{
+  display:block;
+  font-size:15px;
+  font-weight:800;
+  color:var(--dark-blue);
+  margin-bottom:6px;
+}
+.faq-card span{
+  display:block;
+  font-size:13.5px;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+/* Footer */
+.footer{
+  margin-top:50px;
+  padding:34px 28px 22px;
+  border-radius:32px;
+  background:rgba(251,251,251,.72);
+  box-shadow:12px 12px 28px var(--sd),-12px -12px 28px var(--sl);
+  text-align:center;
+}
+.footer-logo-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.footer-logo-row img{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+}
+.footer-logo-row span{
+  font-size:20px;
+  font-weight:900;
+  color:var(--dark-blue);
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px 18px;
+  margin:16px 0;
+}
+.footer-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  text-decoration:none;
+  font-size:13.5px;
+  font-weight:700;
+  color:#355870;
+  padding:8px 14px;
+  border-radius:12px;
+  background:rgba(255,255,255,.7);
+  box-shadow:3px 3px 8px var(--sd),-3px -3px 8px var(--sl);
+  transition:all .2s;
+}
+.footer-link:hover{
+  transform:translateY(-2px);
+  background:#fff;
+  color:#153449;
+}
+.footer-copy{
+  margin-top:22px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+@media(max-width:768px){
+  .faq-grid{grid-template-columns:1fr}
+  .page{width:calc(100% - 20px);padding-top:16px}
+  .hero{padding:36px 18px;border-radius:28px}
+  .card, .alert-card, .action-box{padding:20px 18px}
+  .step-card{padding:16px;gap:14px}
+  .step-number{width:38px;height:38px;min-width:38px;font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header Navigation -->
+  <header class="header-nav">
+    <a href="/" class="brand">
+      <img src="/assets/logo.png" alt="Rush Box Logo" onerror="this.src='/favicon/favicon-96x96.png'">
+      <span class="brand-name">Rush Box</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/" class="nav-btn">Home</a>
+      <a href="/about" class="nav-btn">About</a>
+      <a href="https://rushbox.in" target="_blank" rel="noopener" class="nav-btn primary">Play Web &rarr;</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="hero-logo">🗑️</div>
+      <div class="badge">Data Privacy & Erasure</div>
+      <h1>Delete Account & Data</h1>
+      <p class="subtitle">
+        We respect your right to data privacy. Follow this transparent guide to delete your Rush Box account and permanently purge your cloud game data with a 10-day cancellation safety window.
+      </p>
+    </section>
+
+    <!-- Important Notice / Warning Card -->
+    <section class="alert-card">
+      <h3>⚠️ 10-Day Account Deletion & Permanent Purge Notice</h3>
+      <p>
+        Submitting an account deletion request schedules your database profile and cloud records for permanent erasure. You will enter a <strong>10-day grace period</strong> during which you can cancel at any time.
+      </p>
+      <p><strong>What will be permanently wiped after 10 days:</strong></p>
+      <ul>
+        <li>All game level progress, high scores, personal bests & 3-star ratings across all games.</li>
+        <li>All global RB Points wallet balance & transactional ledger activity records.</li>
+        <li>All in-game coins, power-up inventory, and unlocked cosmetic themes/blade effects.</li>
+        <li>Global Gamer Level (1–100), cumulative XP points, and profile authentication credentials (email/hashed passwords/Pi UID).</li>
+      </ul>
+    </section>
+
+    <!-- Step-by-Step Interactive Guide -->
+    <section class="section">
+      <h2 class="section-title">How to Request Account Deletion (Step-by-Step)</h2>
+      
+      <div class="steps-container">
+
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Open Rush Box App or Web Game Portal</h4>
+            <p>
+              Launch the <strong>Rush Box</strong> mobile app on your Android device or visit the web portal at <a href="https://rushbox.in" target="_blank" rel="noopener" class="step-highlight">https://rushbox.in</a> (or in Pi Browser via <span class="step-highlight">pi.rushbox.in</span>).
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Log In to Your Account</h4>
+            <p>
+              Ensure you are logged in using your registered <strong>Email & Password</strong> or via <strong>Pi Network Auth</strong>. <em>(If you are playing in Guest mode, see the Guest section below).</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Open Settings &rarr; Account Profile</h4>
+            <p>
+              Tap the ⚙️ <strong>Settings</strong> icon located on the top right of the Rush Box Game Library, then open your <strong>Account Profile</strong> section.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Select "Delete Account & Data"</h4>
+            <p>
+              Scroll down to the bottom of the account screen and click on <strong>"Delete Account & Data"</strong> (or navigate directly to <a href="https://rushbox.in/account/delete-request" target="_blank" rel="noopener" class="step-highlight">rushbox.in/account/delete-request</a>).
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>Select Reason & Confirm</h4>
+            <p>
+              Choose a reason for deletion (e.g. Taking a break, Privacy concerns, Starting fresh, Bugs/Issues), check the confirmation checkbox, and click the red button: <span class="step-highlight">REQUEST ACCOUNT DELETION (10-DAY GRACE)</span>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step-card">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h4>Active 10-Day Grace Period Countdown</h4>
+            <p>
+              Your deletion is scheduled! A live countdown banner showing <span class="step-highlight">10 DAYS REMAINING</span> will be visible in your account.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Grace Period Cancellation Banner -->
+      <div class="grace-card">
+        <h4>🎉 Changed your mind? Cancel anytime within 10 days!</h4>
+        <p>
+          If you decide to keep your account during the 10-day window, simply log in, go to the Delete Account screen, and click <strong>"CANCEL DELETION REQUEST"</strong> &rarr; <em>"YES, KEEP MY ACCOUNT"</em>. Your account and points will remain 100% safe!
+        </p>
+      </div>
+    </section>
+
+    <!-- Alternative Methods (Email & Guest) -->
+    <section class="section">
+      <h2 class="section-title">Alternative Deletion Options</h2>
+      <div class="faq-grid">
+
+        <div class="faq-card">
+          <strong>✉️ Manual Email Deletion Request</strong>
+          <span>If you cannot access your device or web app, email our privacy team at <a href="mailto:contact@rushbox.in" style="color:var(--accent);font-weight:700;">contact@rushbox.in</a> or <a href="mailto:contact@connectpi.in" style="color:var(--accent);font-weight:700;">contact@connectpi.in</a> with your registered username. Requests are processed within 30 days.</span>
+        </div>
+
+        <div class="faq-card">
+          <strong>🎮 Guest Mode Players (Local Data Reset)</strong>
+          <span>If you never created an account and only played as a Guest, zero personal data is stored on our servers. You can reset all local progress anytime by going to Settings &rarr; <em>"Reset All Game Progress"</em> or clearing your browser storage.</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Action Launch Box -->
+    <section class="action-box">
+      <h3>Ready to Manage Your Account?</h3>
+      <p>
+        Visit the live Rush Box web portal or contact our dedicated privacy support team for assistance.
+      </p>
+      <div class="action-btns">
+        <a href="https://rushbox.in/account/delete-request" target="_blank" rel="noopener" class="btn primary">
+          🚀 Open Deletion Portal (rushbox.in)
+        </a>
+        <a href="mailto:contact@rushbox.in?subject=Rush%20Box%20Account%20Deletion%20Request" class="btn secondary">
+          ✉️ Email Support
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Navigation -->
+  <footer class="footer">
+    <div class="footer-logo-row">
+      <img src="/assets/logo.png" alt="Rush Box Logo" onerror="this.src='/favicon/favicon-96x96.png'">
+      <span>Rush Box</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="/" class="footer-link">🏠 Home</a>
+      <a href="/about" class="footer-link">🎮 About</a>
+      <a href="/privacy" class="footer-link">🔒 Privacy Policy</a>
+      <a href="/terms" class="footer-link">📜 Terms of Service</a>
+      <a href="/child-policy" class="footer-link">🧒 Child Privacy</a>
+      <a href="/delete-account" class="footer-link" style="color:#dc2626;">🗑️ Delete Account</a>
+    </div>
+
+    <div class="footer-copy">
+      <p>Developer: <strong>Aditya</strong> • Email: <a href="mailto:contact@connectpi.in" style="color:var(--accent);text-decoration:none;font-weight:700;">contact@connectpi.in</a></p>
+      <p style="margin-top:6px;">&copy; 2026 Rush Box • Play a little. Play again.</p>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
