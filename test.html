@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Rush Box - Orientation Demo</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        background: #111;
+    }
+
+    /* Main game */
+    #game {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        background: linear-gradient(135deg, #111, #292929);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .game-content {
+        text-align: center;
+        color: white;
+    }
+
+    .game-content h1 {
+        font-size: clamp(32px, 6vw, 70px);
+        margin-bottom: 15px;
+    }
+
+    .game-content p {
+        font-size: clamp(16px, 2vw, 24px);
+    }
+
+    /* Portrait overlay */
+    #rotateOverlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(0, 0, 0, 0.96);
+        color: white;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .rotate-box {
+        max-width: 400px;
+    }
+
+    .phone {
+        font-size: 70px;
+        display: inline-block;
+        margin-bottom: 20px;
+
+        animation: rotatePhone 1.8s infinite ease-in-out;
+    }
+
+    @keyframes rotatePhone {
+        0%, 30% {
+            transform: rotate(0deg);
+        }
+
+        60%, 100% {
+            transform: rotate(90deg);
+        }
+    }
+
+    .rotate-box h2 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .rotate-box p {
+        color: #ccc;
+        line-height: 1.5;
+    }
+
+    /* Show overlay only in portrait */
+    @media (orientation: portrait) {
+        #rotateOverlay {
+            display: flex;
+        }
+    }
+
+    /* Landscape game adjustments */
+    @media (orientation: landscape) {
+        #game {
+            width: 100vw;
+            height: 100vh;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Game -->
+<div id="game">
+
+    <div class="game-content">
+        <h1>🎮 RUSH BOX</h1>
+        <p id="status">Landscape mode active</p>
+    </div>
+
+</div>
+
+<!-- Portrait message -->
+<div id="rotateOverlay">
+    <div class="rotate-box">
+
+        <div class="phone">📱</div>
+
+        <h2>Rotate Your Device</h2>
+
+        <p>
+            Please rotate your phone to landscape mode
+            for the best Rush Box gaming experience.
+        </p>
+
+    </div>
+</div>
+
+<script>
+
+function updateOrientation() {
+
+    const isPortrait =
+        window.matchMedia("(orientation: portrait)").matches;
+
+    const status = document.getElementById("status");
+
+    if (isPortrait) {
+        status.textContent = "Portrait mode";
+    } else {
+        status.textContent = "Landscape mode active";
+    }
+
+    console.log(
+        isPortrait
+            ? "Portrait mode"
+            : "Landscape mode"
+    );
+}
+
+/* Detect orientation changes */
+window.addEventListener("orientationchange", updateOrientation);
+
+/* Also detect viewport changes */
+window.addEventListener("resize", updateOrientation);
+
+/* Initial check */
+updateOrientation();
+
+</script>
+
+</body>
+</html>
