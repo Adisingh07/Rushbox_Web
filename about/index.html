@@ -3,215 +3,452 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="About Rush Box — a growing collection of smooth, colorful and engaging mini games.">
-<title>About Rush Box</title>
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<meta name="theme-color" content="#69d0e9">
+
+<meta name="description" content="About Rush Box — Arcade & Casual Gaming Hub featuring Fruit Slice, Arrow Tap Out, Tic Tac Toe, Knife Throw, global XP progression, cloud sync, and 60+ FPS gameplay.">
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rush Box">
+<meta property="og:url" content="https://rushbox.in/about">
+<meta property="og:title" content="About Rush Box — Arcade & Casual Gaming Hub">
+<meta property="og:description" content="Explore our game catalog (Fruit Slice, Arrow Tap Out, Tic Tac Toe, Knife Throw) and platform features like global XP and cloud sync.">
+<meta property="og:image" content="https://rushbox.in/assets/logo.png">
+<meta property="og:image:secure_url" content="https://rushbox.in/assets/logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="Rush Box Logo">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About Rush Box — Arcade & Casual Gaming Hub">
+<meta name="twitter:description" content="Explore our game catalog and platform features like global XP and cloud sync.">
+<meta name="twitter:image" content="https://rushbox.in/assets/logo.png">
+<title>About Rush Box — Arcade & Casual Gaming Hub</title>
 <style>
 :root{
   --blue:#C6E7FF;--ice:#D4F6FF;--white:#FBFBFB;--peach:#FFDDAE;
-  --text:#263746;--muted:#637789;
+  --text:#263746;--muted:#627789;--dark-blue:#1b2a38;
+  --accent:#316688;--card-bg:rgba(251,251,251,.72);
   --sd:rgba(119,157,181,.22);--sl:rgba(255,255,255,.92);
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  margin:0;min-height:100vh;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   color:var(--text);
+  line-height:1.7;
   background:
-    radial-gradient(circle at 8% 8%,rgba(255,255,255,.95),transparent 25%),
-    radial-gradient(circle at 92% 14%,rgba(255,221,174,.42),transparent 23%),
+    radial-gradient(circle at 8% 6%,rgba(255,255,255,.95),transparent 25%),
+    radial-gradient(circle at 92% 10%,rgba(255,221,174,.38),transparent 22%),
     radial-gradient(circle at 50% 100%,rgba(198,231,255,.8),transparent 35%),
     linear-gradient(145deg,var(--ice),var(--blue) 52%,#edfaff);
 }
-.page{width:min(1080px,calc(100% - 32px));margin:auto;padding:40px 0 65px}
+.page{
+  width:min(1020px,calc(100% - 32px));
+  margin:auto;
+  padding:36px 0 65px;
+}
+
+/* Hero Section */
 .hero{
-  text-align:center;padding:54px 28px 48px;border-radius:40px;
-  background:rgba(251,251,251,.68);
-  box-shadow:16px 16px 35px var(--sd),-16px -16px 35px var(--sl);
+  text-align:center;
+  padding:50px 28px 44px;
+  border-radius:36px;
+  background:rgba(251,251,251,.72);
+  box-shadow:14px 14px 34px var(--sd),-14px -14px 34px var(--sl);
   backdrop-filter:blur(15px);
+  position:relative;
+  overflow:hidden;
 }
 .logo{
-  width:92px;height:92px;margin:0 auto 22px;border-radius:29px;display:grid;place-items:center;
-  font-size:46px;background:linear-gradient(145deg,#fff,var(--ice));
-  box-shadow:10px 10px 20px var(--sd),-10px -10px 20px var(--sl)
+  width:88px;height:88px;
+  margin:0 auto 18px;
+  border-radius:28px;
+  display:grid;place-items:center;
+  font-size:44px;
+  background:linear-gradient(145deg,#fff,var(--ice));
+  box-shadow:8px 8px 18px var(--sd),-8px -8px 18px var(--sl);
+  transition:transform .3s ease;
 }
-h1{margin:0;font-size:clamp(42px,7vw,68px);letter-spacing:-2.5px;line-height:1}
+.logo:hover{
+  transform:scale(1.06) rotate(5deg);
+}
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  color:var(--accent);
+  background:rgba(255,255,255,.8);
+  box-shadow:4px 4px 10px var(--sd),-4px -4px 10px var(--sl);
+  margin-bottom:14px;
+}
+h1{
+  margin:0;
+  font-size:clamp(36px,6vw,56px);
+  letter-spacing:-1.8px;
+  line-height:1.1;
+  color:var(--dark-blue);
+}
 .tagline{
-  max-width:760px;margin:18px auto 0;font-size:21px;font-weight:600;line-height:1.55;
-  color:#40576a
+  max-width:720px;
+  margin:14px auto 0;
+  font-size:19px;
+  font-weight:600;
+  line-height:1.5;
+  color:#3b5266;
 }
 .hero-desc{
-  max-width:780px;margin:15px auto 0;font-size:15px;line-height:1.8;color:var(--muted)
+  max-width:760px;
+  margin:14px auto 0;
+  font-size:15px;
+  line-height:1.8;
+  color:var(--muted);
 }
-.section{margin-top:34px}
-.section-title{margin:0 0 17px 8px;font-size:23px;letter-spacing:-.4px}
-.about{
-  padding:28px 30px;border-radius:30px;background:rgba(251,251,251,.62);
+
+/* General Sections */
+.section{
+  margin-top:34px;
+}
+.section-title{
+  margin:0 0 16px 8px;
+  font-size:21px;
+  font-weight:800;
+  letter-spacing:.4px;
+  color:#223647;
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* Card */
+.card{
+  padding:28px 30px;
+  border-radius:30px;
+  background:var(--card-bg);
   box-shadow:10px 10px 24px var(--sd),-10px -10px 24px var(--sl);
-  font-size:15px;line-height:1.85;color:var(--muted)
+  backdrop-filter:blur(10px);
 }
-.about p{margin:0 0 14px}.about p:last-child{margin-bottom:0}
-.games{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.game{
-  min-height:275px;padding:25px 22px;border-radius:30px;background:rgba(251,251,251,.72);
-  box-shadow:10px 10px 22px var(--sd),-10px -10px 22px var(--sl);transition:.22s
+.card p{
+  margin:0 0 14px;
+  font-size:15px;
+  line-height:1.85;
+  color:#4f6578;
 }
-.game:hover{transform:translateY(-5px)}
-.icon{
-  width:64px;height:64px;border-radius:22px;display:grid;place-items:center;font-size:32px;margin-bottom:18px;
+.card p:last-child{margin-bottom:0}
+
+/* Games Grid */
+.games-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.game-card{
+  padding:24px;
+  border-radius:28px;
+  background:var(--card-bg);
+  box-shadow:9px 9px 22px var(--sd),-9px -9px 22px var(--sl);
+  transition:transform .24s ease, box-shadow .24s ease;
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+}
+.game-card:hover{
+  transform:translateY(-4px);
+  box-shadow:12px 12px 28px var(--sd),-12px -12px 28px var(--sl);
+}
+.game-icon{
+  width:58px;height:58px;
+  min-width:58px;
+  border-radius:20px;
+  display:grid;place-items:center;
+  font-size:28px;
   background:linear-gradient(145deg,#fff,var(--blue));
-  box-shadow:7px 7px 15px var(--sd),-7px -7px 15px var(--sl)
+  box-shadow:6px 6px 14px var(--sd),-6px -6px 14px var(--sl);
 }
-.game h3{margin:0 0 9px;font-size:21px}.game p{margin:0;color:var(--muted);line-height:1.72;font-size:14px}
-.features{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
-.feature{
-  padding:24px;border-radius:28px;background:rgba(251,251,251,.62);
-  box-shadow:8px 8px 19px var(--sd),-8px -8px 19px var(--sl)
+.game-info h3{
+  margin:0 0 6px;
+  font-size:18px;
+  font-weight:800;
+  color:var(--dark-blue);
 }
-.feature strong{display:block;margin-bottom:8px;font-size:17px}.feature span{color:var(--muted);font-size:14px;line-height:1.7}
+.game-info p{
+  margin:0;
+  font-size:14px;
+  line-height:1.65;
+  color:var(--muted);
+}
+
+/* Features Grid */
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.feature-card{
+  padding:22px 24px;
+  border-radius:26px;
+  background:var(--card-bg);
+  box-shadow:8px 8px 20px var(--sd),-8px -8px 20px var(--sl);
+  transition:transform .2s ease;
+}
+.feature-card:hover{
+  transform:translateY(-3px);
+}
+.feature-card strong{
+  display:block;
+  font-size:16px;
+  font-weight:800;
+  color:var(--dark-blue);
+  margin-bottom:8px;
+}
+.feature-card span{
+  display:block;
+  font-size:14px;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+/* Quote / Highlight Box */
 .quote{
-  margin-top:34px;text-align:center;padding:34px 25px;border-radius:32px;
-  background:linear-gradient(145deg,rgba(255,255,255,.75),rgba(212,246,255,.62));
-  box-shadow:10px 10px 23px var(--sd),-10px -10px 23px var(--sl)
+  margin-top:34px;
+  text-align:center;
+  padding:32px 24px;
+  border-radius:30px;
+  background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(212,246,255,.65));
+  box-shadow:10px 10px 24px var(--sd),-10px -10px 24px var(--sl);
 }
-.quote strong{display:block;font-size:24px;margin-bottom:8px}.quote span{color:var(--muted);font-size:14px}
-.footer{text-align:center;margin-top:42px;color:var(--muted);font-size:13px}
-@media(max-width:780px){
-  .games,.features{grid-template-columns:1fr}.page{width:calc(100% - 20px);padding-top:20px}
-  .hero{padding:40px 18px;border-radius:31px}.tagline{font-size:18px}.about{padding:23px}
+.quote strong{
+  display:block;
+  font-size:22px;
+  font-weight:800;
+  color:var(--dark-blue);
+  margin-bottom:6px;
+}
+.quote span{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Contact & Policy Links */
+.contact-card{
+  margin-top:34px;
+  padding:26px 28px;
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(212,246,255,.6));
+  box-shadow:9px 9px 22px var(--sd),-9px -9px 22px var(--sl);
+}
+.contact-card h3{
+  margin:0 0 12px;
+  font-size:17px;
+  font-weight:800;
+  color:var(--dark-blue);
+}
+.contact-card p{
+  margin:4px 0;
+  font-size:14px;
+  color:#50677a;
+}
+.links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+.links a{
+  display:inline-flex;
+  align-items:center;
+  padding:9px 15px;
+  border-radius:14px;
+  text-decoration:none;
+  color:#31566d;
+  background:rgba(255,255,255,.75);
+  box-shadow:4px 4px 10px var(--sd),-4px -4px 10px var(--sl);
+  font-size:13px;
+  font-weight:700;
+  transition:all .2s ease;
+}
+.links a:hover{
+  transform:translateY(-2px);
+  background:#fff;
+  color:#1c435c;
+  box-shadow:6px 6px 14px var(--sd),-6px -6px 14px var(--sl);
+}
+
+/* Footer */
+.footer{
+  text-align:center;
+  margin-top:40px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .games-grid, .features-grid{grid-template-columns:1fr}
+  .page{width:calc(100% - 22px);padding-top:20px}
+  .hero{padding:38px 18px;border-radius:28px}
+  .tagline{font-size:17px}
+  .card{padding:22px}
+  .game-card{padding:20px;gap:14px}
+  .game-icon{width:50px;height:50px;min-width:50px;font-size:24px;border-radius:16px}
 }
 </style>
 </head>
 <body>
 <main class="page">
 
-<section class="hero">
-  <div class="logo">🎮</div>
-  <h1>Rush Box</h1>
-  <p class="tagline">Small games. Smooth moments. One box full of fun.</p>
-  <p class="hero-desc">
-    Rush Box is a growing collection of colorful, easy-to-pick-up games made for quick
-    sessions, satisfying gameplay and those moments when you simply want to play something fun.
-  </p>
-</section>
-
-<section class="section">
-  <h2 class="section-title">About Rush Box</h2>
-  <div class="about">
-    <p>
-      Rush Box brings different kinds of casual games together in one simple place.
-      Instead of focusing on a single genre, Rush Box is built around a collection of
-      games that can grow over time — from thoughtful puzzle challenges to classic
-      strategy and fast arcade action.
+  <!-- Hero Overview -->
+  <section class="hero">
+    <div class="logo">🎮</div>
+    <div class="badge">Arcade & Casual Gaming Hub</div>
+    <h1>Rush Box</h1>
+    <p class="tagline">Small games. Smooth moments. One box full of fun.</p>
+    <p class="hero-desc">
+      Rush Box brings the best of casual and arcade gaming together into a single ultra-responsive, privacy-centric gaming hub — featuring rich physics, smooth animations, global level progression, and seamless cross-platform cloud sync.
     </p>
-    <p>
-      Every game has its own identity, gameplay style and visual experience while
-      sharing the same goal: responsive controls, smooth animations, clear feedback
-      and an enjoyable experience across supported devices.
-    </p>
-    <p>
-      Whether you have a few minutes to solve a puzzle, want to challenge an AI,
-      or simply want to beat your previous score, Rush Box is designed to make
-      starting a game quick and getting back to it even easier.
-    </p>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <h2 class="section-title">What's Inside</h2>
-  <div class="games">
-
-    <article class="game">
-      <div class="icon">➡️</div>
-      <h3>Arrow Tap Out</h3>
+  <!-- About the Platform -->
+  <section class="section">
+    <h2 class="section-title">About the Platform</h2>
+    <div class="card">
       <p>
-        A strategic tile-clearing puzzle where every move matters. Tap an arrow
-        tile and it moves in the direction it points when its path is clear.
-        Remove tiles in the right sequence, open blocked paths and clear the
-        entire board.
+        Rush Box was forged with one driving vision: to make casual gaming truly fast, delightful, and respectful of player privacy.
       </p>
-    </article>
-
-    <article class="game">
-      <div class="icon">⭕</div>
-      <h3>Tic Tac Toe</h3>
       <p>
-        The classic 3×3 game with a modern experience. Play against another
-        player, challenge the AI across different difficulty levels, or enter
-        Rush Mode for a faster challenge with smooth turn and result feedback.
+        Instead of bloating each game with heavy downloads, Rush Box bundles carefully crafted arcade experiences into a lightweight, unified hub. Every game features bespoke audio, tactile haptic feedback, 60+ FPS native rendering, and complete offline capability.
       </p>
-    </article>
-
-    <article class="game">
-      <div class="icon">🍉</div>
-      <h3>Fruit Slice</h3>
-      <p>
-        Swipe through flying fruits, build combos and protect your hearts while
-        avoiding bombs. Take on structured levels or test your reflexes and
-        score in Rush Mode.
-      </p>
-    </article>
-
-  </div>
-</section>
-
-<section class="section">
-  <h2 class="section-title">Designed Around the Experience</h2>
-  <div class="features">
-    <div class="feature">
-      <strong>✨ Smooth Gameplay</strong>
-      <span>
-        Responsive interactions, fluid animations and carefully timed feedback
-        are part of the experience from the first tap.
-      </span>
     </div>
+  </section>
 
-    <div class="feature">
-      <strong>🎨 Distinct Game Worlds</strong>
-      <span>
-        Games are not forced into one identical interface. Each game can have
-        its own visual language while still feeling like part of Rush Box.
-      </span>
+  <!-- Game Catalog -->
+  <section class="section">
+    <h2 class="section-title">Our Game Catalog</h2>
+    <div class="games-grid">
+
+      <!-- Fruit Slice -->
+      <article class="game-card">
+        <div class="game-icon">🍉</div>
+        <div class="game-info">
+          <h3>Fruit Slice</h3>
+          <p>
+            Master the Katana Runes level trail! Slice flying fruits, trigger devastating combo chains, dodge explosives, and test your speed in Timed & Timeless Rush modes.
+          </p>
+        </div>
+      </article>
+
+      <!-- Arrow Tap Out -->
+      <article class="game-card">
+        <div class="game-icon">➡️</div>
+        <div class="game-info">
+          <h3>Arrow Tap Out</h3>
+          <p>
+            A spatial 3D puzzle challenge. Tap arrows to untangle intricate multi-directional boards across themed chapters with special tiles and power-ups.
+          </p>
+        </div>
+      </article>
+
+      <!-- Tic Tac Toe -->
+      <article class="game-card">
+        <div class="game-icon">⭕</div>
+        <div class="game-info">
+          <h3>Tic Tac Toe</h3>
+          <p>
+            Classic 3x3 and tactical 4x4 boards. Play against intelligent AI across three difficulty tiers or battle friends in timed local PvP matches.
+          </p>
+        </div>
+      </article>
+
+      <!-- Knife Throw -->
+      <article class="game-card">
+        <div class="game-icon">🗡️</div>
+        <div class="game-info">
+          <h3>Knife Throw</h3>
+          <p>
+            Reflex and precision arcade action. Hit spinning targets, avoid hitting embedded blades, and unlock legendary blade styles.
+          </p>
+        </div>
+      </article>
+
     </div>
+  </section>
 
-    <div class="feature">
-      <strong>🔊 Sound & Vibration</strong>
-      <span>
-        Important actions can have satisfying sound and haptic feedback, with
-        global controls available through the app settings.
-      </span>
+  <!-- Core Platform Features -->
+  <section class="section">
+    <h2 class="section-title">Core Platform Features</h2>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <strong>☁️ Cloud Sync & Cross-Device Play</strong>
+        <span>
+          Save your unlocked levels, high scores, and stars to the cloud and switch between mobile and web without losing a single beat.
+        </span>
+      </div>
+
+      <div class="feature-card">
+        <strong>⭐ Global Gamer Level & XP (1–100)</strong>
+        <span>
+          Earn +10 XP for every active minute of gameplay across any game to level up your gamer profile.
+        </span>
+      </div>
+
+      <div class="feature-card">
+        <strong>🪙 Global RB Points Meta-Economy</strong>
+        <span>
+          Earn RB Points through daily claims and achievements to convert into in-game coins or unlock future entitlements.
+        </span>
+      </div>
+
+      <div class="feature-card">
+        <strong>⚡ 60 FPS Native Performance & Audio</strong>
+        <span>
+          Built with optimized Flutter engines, custom audio synthesis, and native haptic feedback.
+        </span>
+      </div>
+
+      <div class="feature-card" style="grid-column: 1 / -1;">
+        <strong>🛡️ Privacy-First & Family Safe</strong>
+        <span>
+          Enjoy full gameplay in Guest mode with zero forced signups or tracking.
+        </span>
+      </div>
+
     </div>
+  </section>
 
-    <div class="feature">
-      <strong>📱 Built to Grow</strong>
-      <span>
-        Rush Box is designed as an expanding collection, making room for more
-        games, new mechanics and new experiences in the future.
-      </span>
+  <!-- Quote Section -->
+  <section class="quote">
+    <strong>More games. More challenges. More reasons to play.</strong>
+    <span>Rush Box is built to keep growing.</span>
+  </section>
+
+  <!-- Contact & Legal Hub -->
+  <section class="contact-card">
+    <h3>Developer & Inquiries</h3>
+    <p><strong>Developer:</strong> Aditya</p>
+    <p><strong>Email:</strong> contact@connectpi.in</p>
+    <p><strong>Country:</strong> India</p>
+
+    <div class="links">
+      <a href="/privacy">🔒 Privacy Policy</a>
+      <a href="/terms">📜 Terms of Service</a>
+      <a href="/child-policy">🧒 Child Privacy Policy</a>
     </div>
+  </section>
 
-    <div class="feature">
-      <strong>🧩 Simple to Start</strong>
-      <span>
-        Pick a game, understand the controls quickly and start playing without
-        unnecessary complexity.
-      </span>
-    </div>
-
-    <div class="feature">
-      <strong>🏆 Play Your Way</strong>
-      <span>
-        Puzzle levels, competitive rounds and score-based arcade sessions give
-        you different ways to enjoy the collection.
-      </span>
-    </div>
-  </div>
-</section>
-
-<section class="quote">
-  <strong>More games. More challenges. More reasons to play.</strong>
-  <span>Rush Box is built to keep growing.</span>
-</section>
-
-<p class="footer">Rush Box • Play a little. Play again.</p>
+  <p class="footer">Rush Box • Play a little. Play again.</p>
 
 </main>
 </body>

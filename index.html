@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<meta name="theme-color" content="#69d0e9">
+
+<meta name="description" content="Rush Box — The ultimate Arcade & Casual Gaming Hub. Play Fruit Slice, Arrow Tap Out, Tic Tac Toe, Knife Throw on Web (rushbox.in), Pi Browser (pi.rushbox.in), or Android.">
+<meta name="keywords" content="Rush Box, Casual Games, Arcade Games, Fruit Slice, Arrow Tap Out, Tic Tac Toe, Knife Throw, Pi Network Games, Pi Browser, Android Games">
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rush Box">
+<meta property="og:url" content="https://rushbox.in/">
+<meta property="og:title" content="Rush Box — Arcade & Casual Gaming Hub">
+<meta property="og:description" content="Small games. Smooth moments. One box full of fun. Play on Web (rushbox.in), Pi Browser (pi.rushbox.in), or Android!">
+<meta property="og:image" content="https://rushbox.in/assets/logo.png">
+<meta property="og:image:secure_url" content="https://rushbox.in/assets/logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="Rush Box Logo">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rush Box — Arcade & Casual Gaming Hub">
+<meta name="twitter:description" content="Small games. Smooth moments. One box full of fun. Play on Web, Pi Browser, or Android!">
+<meta name="twitter:image" content="https://rushbox.in/assets/logo.png">
+<title>Rush Box — Arcade & Casual Gaming Hub</title>
+<style>
+:root{
+  --blue:#C6E7FF;--ice:#D4F6FF;--white:#FBFBFB;--peach:#FFDDAE;
+  --text:#263746;--muted:#627789;--dark-blue:#192c3d;
+  --accent:#2b6386;--accent-purple:#884cdb;--accent-pi:#9333ea;
+  --card-bg:rgba(251,251,251,.74);
+  --sd:rgba(119,157,181,.22);--sl:rgba(255,255,255,.94);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);
+  line-height:1.68;
+  background:
+    radial-gradient(circle at 10% 8%,rgba(255,255,255,.95),transparent 28%),
+    radial-gradient(circle at 90% 12%,rgba(255,221,174,.45),transparent 25%),
+    radial-gradient(circle at 50% 100%,rgba(198,231,255,.85),transparent 38%),
+    linear-gradient(145deg,var(--ice),var(--blue) 50%,#edfaff);
+}
+
+/* Container */
+.page{
+  width:min(1100px,calc(100% - 32px));
+  margin:auto;
+  padding:32px 0 60px;
+}
+
+/* Header Nav */
+.header-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 24px;
+  border-radius:24px;
+  background:rgba(251,251,251,.65);
+  box-shadow:6px 6px 18px var(--sd),-6px -6px 18px var(--sl);
+  backdrop-filter:blur(12px);
+  margin-bottom:32px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--dark-blue);
+}
+.brand img{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  box-shadow:3px 3px 8px var(--sd);
+}
+.brand-name{
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:-.6px;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.nav-btn{
+  text-decoration:none;
+  padding:8px 16px;
+  border-radius:14px;
+  font-size:13.5px;
+  font-weight:700;
+  color:#33566e;
+  background:rgba(255,255,255,.7);
+  box-shadow:3px 3px 8px var(--sd),-3px -3px 8px var(--sl);
+  transition:all .2s ease;
+}
+.nav-btn:hover{
+  transform:translateY(-2px);
+  background:#fff;
+  color:#19354a;
+}
+.nav-btn.primary{
+  background:linear-gradient(135deg,#316688,#204b66);
+  color:#fff;
+  box-shadow:4px 4px 12px rgba(49,102,136,.35);
+}
+.nav-btn.primary:hover{
+  background:linear-gradient(135deg,#3c7b9e,#275b7a);
+  color:#fff;
+}
+
+/* Hero Section */
+.hero{
+  text-align:center;
+  padding:56px 28px 48px;
+  border-radius:38px;
+  background:rgba(251,251,251,.74);
+  box-shadow:16px 16px 36px var(--sd),-16px -16px 36px var(--sl);
+  backdrop-filter:blur(16px);
+  position:relative;
+  overflow:hidden;
+}
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 16px;
+  border-radius:24px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  color:var(--accent);
+  background:rgba(255,255,255,.88);
+  box-shadow:4px 4px 10px var(--sd),-4px -4px 10px var(--sl);
+  margin-bottom:18px;
+}
+.hero-logo{
+  width:96px;
+  height:96px;
+  margin:0 auto 20px;
+  border-radius:28px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,#fff,var(--ice));
+  box-shadow:10px 10px 22px var(--sd),-10px -10px 22px var(--sl);
+  transition:transform .35s ease;
+}
+.hero-logo img{
+  width:84px;
+  height:84px;
+  border-radius:22px;
+  object-fit:cover;
+}
+.hero-logo:hover{
+  transform:scale(1.06) rotate(4deg);
+}
+h1{
+  margin:0;
+  font-size:clamp(38px,6.5vw,62px);
+  letter-spacing:-2px;
+  line-height:1.08;
+  color:var(--dark-blue);
+}
+.tagline{
+  max-width:740px;
+  margin:16px auto 0;
+  font-size:21px;
+  font-weight:700;
+  color:#314c61;
+  line-height:1.45;
+}
+.hero-desc{
+  max-width:760px;
+  margin:14px auto 0;
+  font-size:15.5px;
+  line-height:1.8;
+  color:var(--muted);
+}
+
+/* CTA Action Bar */
+.cta-group{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:32px;
+}
+.cta-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 26px;
+  border-radius:20px;
+  font-size:15px;
+  font-weight:800;
+  text-decoration:none;
+  cursor:pointer;
+  border:none;
+  transition:all .25s ease;
+}
+.cta-btn.play-web{
+  background:linear-gradient(135deg,#2e698e,#1c4a66);
+  color:#fff;
+  box-shadow:6px 6px 18px rgba(46,105,142,.35),-6px -6px 18px var(--sl);
+}
+.cta-btn.play-web:hover{
+  transform:translateY(-3px);
+  box-shadow:8px 8px 24px rgba(46,105,142,.45);
+}
+.cta-btn.play-pi{
+  background:linear-gradient(135deg,#7e22ce,#581c87);
+  color:#fff;
+  box-shadow:6px 6px 18px rgba(126,34,206,.32),-6px -6px 18px var(--sl);
+}
+.cta-btn.play-pi:hover{
+  transform:translateY(-3px);
+  box-shadow:8px 8px 24px rgba(126,34,206,.45);
+}
+.cta-btn.playstore{
+  background:rgba(255,255,255,.9);
+  padding:8px 14px;
+  border-radius:18px;
+  box-shadow:6px 6px 16px var(--sd),-6px -6px 16px var(--sl);
+}
+.cta-btn.playstore img{
+  height:44px;
+  display:block;
+}
+.cta-btn.playstore:hover{
+  transform:translateY(-3px);
+  background:#fff;
+  box-shadow:8px 8px 22px var(--sd);
+}
+
+/* Sections */
+.section{
+  margin-top:42px;
+}
+.section-header{
+  text-align:center;
+  margin-bottom:24px;
+}
+.section-title{
+  font-size:26px;
+  font-weight:900;
+  letter-spacing:-.6px;
+  color:var(--dark-blue);
+  margin:0 0 6px;
+}
+.section-subtitle{
+  font-size:15px;
+  color:var(--muted);
+  margin:0;
+}
+
+/* Screenshots Showcase Carousel */
+.screenshots-wrapper{
+  padding:24px 20px;
+  border-radius:32px;
+  background:var(--card-bg);
+  box-shadow:12px 12px 28px var(--sd),-12px -12px 28px var(--sl);
+}
+.screenshots-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.screenshot-item{
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#fff,var(--ice));
+  box-shadow:6px 6px 16px var(--sd),-6px -6px 16px var(--sl);
+  transition:transform .28s ease, box-shadow .28s ease;
+  position:relative;
+}
+.screenshot-item:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:10px 10px 24px var(--sd);
+}
+.screenshot-item img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+.screenshot-label{
+  padding:10px;
+  text-align:center;
+  font-size:12.5px;
+  font-weight:800;
+  color:#2a485f;
+  background:rgba(255,255,255,.9);
+  border-top:1px solid rgba(119,157,181,.18);
+}
+
+/* Game Catalog Grid */
+.games-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.game-card{
+  padding:24px;
+  border-radius:28px;
+  background:var(--card-bg);
+  box-shadow:9px 9px 22px var(--sd),-9px -9px 22px var(--sl);
+  transition:transform .24s ease, box-shadow .24s ease;
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+}
+.game-card:hover{
+  transform:translateY(-4px);
+  box-shadow:12px 12px 28px var(--sd);
+}
+.game-icon{
+  width:60px;height:60px;
+  min-width:60px;
+  border-radius:20px;
+  display:grid;place-items:center;
+  font-size:30px;
+  background:linear-gradient(145deg,#fff,var(--blue));
+  box-shadow:6px 6px 14px var(--sd),-6px -6px 14px var(--sl);
+}
+.game-info h3{
+  margin:0 0 6px;
+  font-size:19px;
+  font-weight:900;
+  color:var(--dark-blue);
+}
+.game-info p{
+  margin:0;
+  font-size:14px;
+  line-height:1.68;
+  color:var(--muted);
+}
+
+/* Features Grid */
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.feature-card{
+  padding:24px;
+  border-radius:26px;
+  background:var(--card-bg);
+  box-shadow:8px 8px 20px var(--sd),-8px -8px 20px var(--sl);
+  transition:transform .2s ease;
+}
+.feature-card:hover{
+  transform:translateY(-3px);
+}
+.feature-icon{
+  font-size:28px;
+  margin-bottom:10px;
+}
+.feature-card strong{
+  display:block;
+  font-size:16px;
+  font-weight:800;
+  color:var(--dark-blue);
+  margin-bottom:8px;
+}
+.feature-card span{
+  display:block;
+  font-size:13.5px;
+  line-height:1.65;
+  color:var(--muted);
+}
+
+/* Pi Browser Dedicated Card */
+.pi-banner{
+  margin-top:36px;
+  padding:32px 30px;
+  border-radius:32px;
+  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(235,220,255,.75));
+  box-shadow:12px 12px 28px var(--sd),-12px -12px 28px var(--sl);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.pi-banner-content h3{
+  margin:0 0 8px;
+  font-size:22px;
+  font-weight:900;
+  color:#4a127a;
+}
+.pi-banner-content p{
+  margin:0;
+  font-size:14.5px;
+  color:#5d367e;
+  max-width:620px;
+}
+.pi-btn-group{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:210px;
+}
+
+/* Modal Popup for Pi Browser */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(20,38,54,.55);
+  backdrop-filter:blur(8px);
+  display:none;
+  place-items:center;
+  z-index:9999;
+  padding:16px;
+}
+.modal-overlay.active{
+  display:grid;
+}
+.modal-card{
+  width:min(520px,100%);
+  background:#fff;
+  border-radius:32px;
+  padding:34px 28px 28px;
+  box-shadow:0 24px 60px rgba(0,0,0,.25);
+  text-align:center;
+  position:relative;
+  animation:popIn .25s ease-out;
+}
+@keyframes popIn{
+  from{transform:scale(.92);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+.modal-close{
+  position:absolute;
+  top:18px;
+  right:20px;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:rgba(0,0,0,.06);
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  color:#555;
+  transition:background .2s;
+}
+.modal-close:hover{
+  background:rgba(0,0,0,.12);
+}
+.modal-icon{
+  width:68px;
+  height:68px;
+  margin:0 auto 16px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#9333ea,#6b21a8);
+  color:#fff;
+  font-size:32px;
+  display:grid;
+  place-items:center;
+  box-shadow:0 8px 20px rgba(147,51,234,.35);
+}
+.modal-card h3{
+  margin:0 0 10px;
+  font-size:22px;
+  font-weight:900;
+  color:var(--dark-blue);
+}
+.modal-card p{
+  font-size:14.5px;
+  color:var(--muted);
+  margin:0 0 20px;
+  line-height:1.65;
+}
+.copy-box{
+  display:flex;
+  align-items:center;
+  background:#f1f5f9;
+  border:2px dashed #cbd5e1;
+  border-radius:18px;
+  padding:8px 10px 8px 16px;
+  margin-bottom:18px;
+}
+.copy-url{
+  font-family:monospace;
+  font-size:16px;
+  font-weight:700;
+  color:#334155;
+  flex:1;
+  text-align:left;
+}
+.copy-btn{
+  background:linear-gradient(135deg,#7e22ce,#581c87);
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:12px;
+  font-weight:800;
+  font-size:13px;
+  cursor:pointer;
+  transition:opacity .2s;
+}
+.copy-btn:hover{
+  opacity:.9;
+}
+.steps-list{
+  text-align:left;
+  background:#f8fafc;
+  border-radius:18px;
+  padding:16px 20px;
+  font-size:13.5px;
+  color:#475569;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+.steps-list ol{
+  margin:0;
+  padding-left:20px;
+}
+.direct-open-btn{
+  display:inline-block;
+  width:100%;
+  padding:14px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#2e698e,#1c4a66);
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  font-size:14px;
+}
+
+/* Toast notification */
+.toast{
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%) translateY(100px);
+  background:#1e293b;
+  color:#fff;
+  padding:12px 24px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:700;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+  opacity:0;
+  transition:all .3s ease;
+  z-index:10000;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.toast.show{
+  transform:translateX(-50%) translateY(0);
+  opacity:1;
+}
+
+/* Footer */
+.footer{
+  margin-top:54px;
+  padding:36px 28px 24px;
+  border-radius:34px;
+  background:rgba(251,251,251,.72);
+  box-shadow:12px 12px 28px var(--sd),-12px -12px 28px var(--sl);
+  text-align:center;
+}
+.footer-logo-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:16px;
+}
+.footer-logo-row img{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+}
+.footer-logo-row span{
+  font-size:20px;
+  font-weight:900;
+  color:var(--dark-blue);
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px 20px;
+  margin:18px 0;
+}
+.footer-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  color:#355870;
+  padding:8px 14px;
+  border-radius:12px;
+  background:rgba(255,255,255,.7);
+  box-shadow:3px 3px 8px var(--sd),-3px -3px 8px var(--sl);
+  transition:all .2s;
+}
+.footer-link:hover{
+  transform:translateY(-2px);
+  background:#fff;
+  color:#153449;
+}
+.footer-copy{
+  margin-top:24px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* Responsive queries */
+@media(max-width:900px){
+  .screenshots-grid{grid-template-columns:repeat(2,1fr)}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .pi-banner{flex-direction:column;text-align:center}
+  .pi-btn-group{width:100%}
+}
+@media(max-width:650px){
+  .page{width:calc(100% - 20px);padding-top:16px}
+  .header-nav{padding:12px 16px}
+  .hero{padding:40px 18px;border-radius:30px}
+  .tagline{font-size:18px}
+  .hero-logo{width:80px;height:80px;border-radius:24px}
+  .hero-logo img{width:70px;height:70px}
+  .cta-group{flex-direction:column;align-items:stretch}
+  .cta-btn{width:100%}
+  .screenshots-grid{grid-template-columns:repeat(2,1fr)}
+  .games-grid{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr}
+  .feature-card{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header Navigation Bar -->
+  <header class="header-nav">
+    <a href="/" class="brand">
+      <img src="/assets/logo.png" alt="Rush Box Logo" onerror="this.src='/favicon/favicon-96x96.png'">
+      <span class="brand-name">Rush Box</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/about" class="nav-btn">About</a>
+      <a href="https://rushbox.in" target="_blank" rel="noopener" class="nav-btn primary">Play Web &rarr;</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="hero-logo">
+        <img src="/assets/logo.png" alt="Rush Box" onerror="this.src='/favicon/favicon-96x96.png'">
+      </div>
+      <div class="hero-badge">🎮 Arcade & Casual Gaming Hub</div>
+      <h1>Rush Box</h1>
+      <p class="tagline">Small games. Smooth moments. One box full of fun.</p>
+      <p class="hero-desc">
+        Rush Box brings the best of casual and arcade gaming together into a single ultra-responsive, privacy-centric gaming hub — featuring rich physics, smooth animations, global level progression, and seamless cross-platform cloud sync across Web, Pi Browser, and Mobile.
+      </p>
+
+      <!-- Multi-Platform Call to Actions -->
+      <div class="cta-group">
+        <!-- Play on Web -->
+        <a href="https://rushbox.in" target="_blank" rel="noopener" class="cta-btn play-web">
+          <span>🌐</span> Play Web Game (rushbox.in)
+        </a>
+
+        <!-- Open in Pi Browser -->
+        <button type="button" class="cta-btn play-pi" onclick="openPiBrowserHandler()">
+          <span>🟣</span> Open in Pi Browser
+        </button>
+
+        <!-- Google Play Store -->
+        <a href="https://play.google.com/store/apps/details?id=com.connectpi.bladerush" target="_blank" rel="noopener" class="cta-btn playstore" title="Get it on Google Play">
+          <img src="/assets/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play">
+        </a>
+      </div>
+    </section>
+
+    <!-- App Screenshots Showcase -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">App Highlights & Gameplay</h2>
+        <p class="section-subtitle">A glimpse inside the smooth, vibrant worlds of Rush Box</p>
+      </div>
+      <div class="screenshots-wrapper">
+        <div class="screenshots-grid">
+          
+          <div class="screenshot-item">
+            <img src="/assets/01.png" alt="Rush Box Screenshot 1" loading="lazy">
+            <div class="screenshot-label">Katana Runes & Fruit Trail</div>
+          </div>
+
+          <div class="screenshot-item">
+            <img src="/assets/02.png" alt="Rush Box Screenshot 2" loading="lazy">
+            <div class="screenshot-label">3D Arrow Tap Spatial Puzzles</div>
+          </div>
+
+          <div class="screenshot-item">
+            <img src="/assets/03.png" alt="Rush Box Screenshot 3" loading="lazy">
+            <div class="screenshot-label">Tactical 3x3 & 4x4 AI Arena</div>
+          </div>
+
+          <div class="screenshot-item">
+            <img src="/assets/04.png" alt="Rush Box Screenshot 4" loading="lazy">
+            <div class="screenshot-label">Knife Throw Precision Targets</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Catalog -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Our Game Catalog</h2>
+        <p class="section-subtitle">Crafted arcade experiences with bespoke audio and instant replayability</p>
+      </div>
+      <div class="games-grid">
+
+        <!-- Fruit Slice -->
+        <article class="game-card">
+          <div class="game-icon">🍉</div>
+          <div class="game-info">
+            <h3>Fruit Slice</h3>
+            <p>Master the Katana Runes level trail! Slice flying fruits, trigger devastating combo chains, dodge explosives, and test your speed in Timed & Timeless Rush modes.</p>
+          </div>
+        </article>
+
+        <!-- Arrow Tap Out -->
+        <article class="game-card">
+          <div class="game-icon">➡️</div>
+          <div class="game-info">
+            <h3>Arrow Tap Out</h3>
+            <p>A spatial 3D puzzle challenge. Tap arrows to untangle intricate multi-directional boards across themed chapters with special tiles and power-ups.</p>
+          </div>
+        </article>
+
+        <!-- Tic Tac Toe -->
+        <article class="game-card">
+          <div class="game-icon">⭕</div>
+          <div class="game-info">
+            <h3>Tic Tac Toe</h3>
+            <p>Classic 3x3 and tactical 4x4 boards. Play against intelligent AI across three difficulty tiers or battle friends in timed local PvP matches.</p>
+          </div>
+        </article>
+
+        <!-- Knife Throw -->
+        <article class="game-card">
+          <div class="game-icon">🗡️</div>
+          <div class="game-info">
+            <h3>Knife Throw</h3>
+            <p>Reflex and precision arcade action. Hit spinning targets, avoid hitting embedded blades, and unlock legendary blade styles.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Core Platform Features -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Core Platform Innovations</h2>
+        <p class="section-subtitle">Designed for speed, fairness, and privacy</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <strong>Cloud Sync & Cross-Device Play</strong>
+          <span>Save your unlocked levels, high scores, and stars to the cloud and switch between mobile and web without losing a single beat.</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <strong>Global Gamer Level & XP (1–100)</strong>
+          <span>Earn +10 XP for every active minute of gameplay across any game to level up your gamer profile and unlock achievements.</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🪙</div>
+          <strong>Global RB Points Meta-Economy</strong>
+          <span>Earn RB Points through daily claims and achievements to convert into in-game coins or unlock future entitlements.</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <strong>60 FPS Native Performance</strong>
+          <span>Built with lightweight, optimized engines, custom synthesized audio, and tactile haptic feedback.</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <strong>Privacy-First & Family Safe</strong>
+          <span>Enjoy full gameplay in Guest mode with zero forced signups, no intrusive trackers, and COPPA compliance.</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📴</div>
+          <strong>Complete Offline Mode</strong>
+          <span>Play anytime, anywhere without requiring an active internet connection on supported mobile games.</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Dedicated Pi Browser Integration Card -->
+    <section class="pi-banner">
+      <div class="pi-banner-content">
+        <h3>🟣 Pi Network Community Hub</h3>
+        <p>
+          Playing on the Pi Network? Rush Box supports direct Pi Browser integration with seamless Pi UID authentication and RB Points synchronization at <strong>pi.rushbox.in</strong>.
+        </p>
+      </div>
+      <div class="pi-btn-group">
+        <button type="button" class="cta-btn play-pi" onclick="openPiBrowserHandler()">
+          Open / Copy Pi Link
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Navigation Links -->
+  <footer class="footer">
+    <div class="footer-logo-row">
+      <img src="/assets/logo.png" alt="Rush Box Logo" onerror="this.src='/favicon/favicon-96x96.png'">
+      <span>Rush Box</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="/about" class="footer-link">🎮 About Rush Box</a>
+      <a href="/privacy" class="footer-link">🔒 Privacy Policy</a>
+      <a href="/terms" class="footer-link">📜 Terms of Service</a>
+      <a href="/child-policy" class="footer-link">🧒 Child Privacy Policy</a>
+    </div>
+
+    <div class="footer-copy">
+      <p>Developer: <strong>Aditya</strong> • Email: <a href="mailto:contact@connectpi.in" style="color:var(--accent);text-decoration:none;font-weight:700;">contact@connectpi.in</a></p>
+      <p style="margin-top:6px;">&copy; 2026 Rush Box • Play a little. Play again.</p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Pi Browser Modal Dialog -->
+<div id="piModal" class="modal-overlay" onclick="handleModalBackdropClick(event)">
+  <div class="modal-card">
+    <button type="button" class="modal-close" onclick="closePiModal()" aria-label="Close">&times;</button>
+    <div class="modal-icon">π</div>
+    <h3>Open in Pi Browser</h3>
+    <p>
+      Rush Box is available for Pi Network Pioneers. You can launch it using the Pi custom schema or copy the link to paste into Pi Browser:
+    </p>
+
+    <!-- Copy URL Box -->
+    <div class="copy-box">
+      <span class="copy-url" id="piUrlText">pi.rushbox.in</span>
+      <button type="button" class="copy-btn" onclick="copyPiLink()">📋 Copy</button>
+    </div>
+
+    <!-- Instruction Steps -->
+    <div class="steps-list">
+      <ol>
+        <li>Open the <strong>Pi Browser</strong> app on your device.</li>
+        <li>Paste <strong>pi.rushbox.in</strong> into the top address bar.</li>
+        <li>Enjoy Rush Box with Pi Network verification!</li>
+      </ol>
+    </div>
+
+    <!-- Direct Launch Button -->
+    <a href="pi://pi.rushbox.in" class="direct-open-btn" onclick="trackPiLaunch()">
+      🚀 Try Direct Open (pi://pi.rushbox.in)
+    </a>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">
+  <span>✅</span>
+  <span id="toastMsg">Link copied to clipboard!</span>
+</div>
+
+<!-- Interactive Scripts for Pi Link & Copy Handling -->
+<script>
+function openPiBrowserHandler() {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+  // Attempt to trigger schema on mobile devices
+  if (isMobile) {
+    window.location.href = 'pi://pi.rushbox.in';
+  }
+  
+  // Always display instructions modal with copy link
+  openPiModal();
+}
+
+function openPiModal() {
+  document.getElementById('piModal').classList.add('active');
+}
+
+function closePiModal() {
+  document.getElementById('piModal').classList.remove('active');
+}
+
+function handleModalBackdropClick(event) {
+  if (event.target === document.getElementById('piModal')) {
+    closePiModal();
+  }
+}
+
+function copyPiLink() {
+  const url = 'pi.rushbox.in';
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      showToast('Copied pi.rushbox.in! Paste it in Pi Browser.');
+    }).catch(() => {
+      fallbackCopy(url);
+    });
+  } else {
+    fallbackCopy(url);
+  }
+}
+
+function fallbackCopy(text) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    showToast('Copied pi.rushbox.in! Paste it in Pi Browser.');
+  } catch (err) {
+    showToast('Failed to copy. Please manually copy pi.rushbox.in');
+  }
+  document.body.removeChild(textArea);
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  toastMsg.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3500);
+}
+
+function trackPiLaunch() {
+  showToast('Launching Pi Browser...');
+}
+
+// Close modal with ESC key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closePiModal();
+  }
+});
+</script>
+
+</body>
+</html>

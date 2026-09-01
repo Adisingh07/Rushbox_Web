@@ -3,294 +3,355 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rush Box Child Privacy Policy. Information about privacy and children's use of Rush Box.">
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<meta name="theme-color" content="#69d0e9">
+
+<meta name="description" content="Rush Box Child Privacy Policy — COPPA, GDPR-K and Google Play Families compliance, zero data collection for children, family-safe advertising, and parental controls.">
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rush Box">
+<meta property="og:url" content="https://rushbox.in/child-policy">
+<meta property="og:title" content="Child Privacy Policy — Rush Box">
+<meta property="og:description" content="Rush Box commitment to child safety, zero tracking for young players, and COPPA/GDPR-K compliance.">
+<meta property="og:image" content="https://rushbox.in/assets/logo.png">
+<meta property="og:image:secure_url" content="https://rushbox.in/assets/logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="Rush Box Logo">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Child Privacy Policy — Rush Box">
+<meta name="twitter:description" content="Rush Box commitment to child safety, zero tracking for young players, and COPPA/GDPR-K compliance.">
+<meta name="twitter:image" content="https://rushbox.in/assets/logo.png">
 <title>Child Privacy Policy — Rush Box</title>
 <style>
 :root{
   --blue:#C6E7FF;--ice:#D4F6FF;--white:#FBFBFB;--peach:#FFDDAE;
-  --text:#263746;--muted:#627789;
-  --sd:rgba(119,157,181,.20);--sl:rgba(255,255,255,.92);
+  --text:#263746;--muted:#627789;--dark-blue:#1b2a38;
+  --accent:#316688;--card-bg:rgba(251,251,251,.72);
+  --sd:rgba(119,157,181,.22);--sl:rgba(255,255,255,.92);
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  margin:0;color:var(--text);
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  margin:0;min-height:100vh;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);
   line-height:1.7;
   background:
     radial-gradient(circle at 8% 6%,rgba(255,255,255,.95),transparent 25%),
     radial-gradient(circle at 92% 10%,rgba(255,221,174,.38),transparent 22%),
+    radial-gradient(circle at 50% 100%,rgba(198,231,255,.8),transparent 35%),
     linear-gradient(145deg,var(--ice),var(--blue) 52%,#edfaff);
 }
-.page{width:min(980px,calc(100% - 28px));margin:auto;padding:30px 0 60px}
+.page{
+  width:min(1020px,calc(100% - 32px));
+  margin:auto;
+  padding:36px 0 65px;
+}
+
+/* Hero Section */
 .hero{
-  text-align:center;padding:42px 25px;border-radius:36px;
+  text-align:center;
+  padding:48px 28px 40px;
+  border-radius:36px;
   background:rgba(251,251,251,.72);
-  box-shadow:14px 14px 32px var(--sd),-14px -14px 32px var(--sl);
-  backdrop-filter:blur(14px)
+  box-shadow:14px 14px 34px var(--sd),-14px -14px 34px var(--sl);
+  backdrop-filter:blur(15px);
 }
-.icon{
-  width:76px;height:76px;margin:0 auto 17px;border-radius:25px;
-  display:grid;place-items:center;font-size:37px;
+.logo{
+  width:84px;height:84px;
+  margin:0 auto 18px;
+  border-radius:26px;
+  display:grid;place-items:center;
+  font-size:40px;
   background:linear-gradient(145deg,#fff,var(--ice));
-  box-shadow:8px 8px 17px var(--sd),-8px -8px 17px var(--sl)
+  box-shadow:8px 8px 18px var(--sd),-8px -8px 18px var(--sl);
 }
-h1{margin:0;font-size:clamp(31px,6vw,50px);letter-spacing:-1.5px;line-height:1.1}
-.subtitle{max-width:720px;margin:12px auto 0;color:var(--muted);font-size:15px}
-.meta{margin-top:17px;color:var(--muted);font-size:13px}
-.content{
-  margin-top:25px;padding:30px;border-radius:32px;
-  background:rgba(251,251,251,.68);
-  box-shadow:10px 10px 25px var(--sd),-10px -10px 25px var(--sl)
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  color:var(--accent);
+  background:rgba(255,255,255,.8);
+  box-shadow:4px 4px 10px var(--sd),-4px -4px 10px var(--sl);
+  margin-bottom:14px;
 }
-h2{font-size:22px;margin:30px 0 10px}
-h2:first-child{margin-top:0}
-h3{font-size:17px;margin:20px 0 7px}
-p,li{font-size:14px;color:#50677a}
-ul{padding-left:22px}
-li{margin:5px 0}
-.note{
-  padding:19px 20px;border-radius:22px;margin:20px 0;
-  background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(212,246,255,.62));
-  box-shadow:6px 6px 14px var(--sd),-6px -6px 14px var(--sl)
+h1{
+  margin:0;
+  font-size:clamp(34px,6vw,52px);
+  letter-spacing:-1.8px;
+  line-height:1.1;
+  color:var(--dark-blue);
 }
-.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.subtitle{
+  max-width:740px;
+  margin:14px auto 0;
+  font-size:16px;
+  color:var(--muted);
+  line-height:1.65;
+}
+.meta-badge{
+  margin-top:16px;
+  display:inline-flex;
+  gap:12px;
+  font-size:13px;
+  font-weight:600;
+  color:#4d667a;
+  background:rgba(255,255,255,.6);
+  padding:6px 16px;
+  border-radius:20px;
+  box-shadow:3px 3px 8px var(--sd),-3px -3px 8px var(--sl);
+}
+
+/* Sections */
+.section{
+  margin-top:30px;
+}
+.section-title{
+  margin:0 0 14px 8px;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:.4px;
+  color:var(--dark-blue);
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* Cards */
+.card{
+  padding:26px 28px;
+  border-radius:28px;
+  background:var(--card-bg);
+  box-shadow:9px 9px 22px var(--sd),-9px -9px 22px var(--sl);
+  backdrop-filter:blur(10px);
+}
+.card p{
+  margin:0 0 14px;
+  font-size:15px;
+  line-height:1.8;
+  color:#4f6578;
+}
+.card p:last-child{margin-bottom:0}
+
+/* Bullet Items */
+.bullet-list{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.bullet-item{
+  padding:16px 18px;
+  border-radius:20px;
+  background:rgba(255,255,255,.6);
+  box-shadow:4px 4px 12px var(--sd),-4px -4px 12px var(--sl);
+}
+.bullet-item strong{
+  display:block;
+  font-size:15px;
+  font-weight:800;
+  color:var(--dark-blue);
+  margin-bottom:6px;
+}
+.bullet-item span{
+  display:block;
+  font-size:14px;
+  line-height:1.68;
+  color:var(--muted);
+}
+
+/* List with checks/bullets */
+ul.bullet-points{
+  margin:10px 0 0;
+  padding-left:22px;
+  color:#4f6578;
+  font-size:14.5px;
+  line-height:1.8;
+}
+ul.bullet-points li{
+  margin-bottom:8px;
+}
+
+/* Contact & Policy Links */
+.contact-card{
+  margin-top:34px;
+  padding:26px 28px;
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(212,246,255,.6));
+  box-shadow:9px 9px 22px var(--sd),-9px -9px 22px var(--sl);
+}
+.contact-card h3{
+  margin:0 0 12px;
+  font-size:17px;
+  font-weight:800;
+  color:var(--dark-blue);
+}
+.contact-card p{
+  margin:4px 0;
+  font-size:14px;
+  color:#50677a;
+}
+.links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
 .links a{
-  display:inline-block;padding:9px 14px;border-radius:14px;text-decoration:none;
-  color:#31566d;background:rgba(255,255,255,.7);
-  box-shadow:4px 4px 9px var(--sd),-4px -4px 9px var(--sl);
-  font-size:13px;font-weight:600
+  display:inline-flex;
+  align-items:center;
+  padding:9px 15px;
+  border-radius:14px;
+  text-decoration:none;
+  color:#31566d;
+  background:rgba(255,255,255,.75);
+  box-shadow:4px 4px 10px var(--sd),-4px -4px 10px var(--sl);
+  font-size:13px;
+  font-weight:700;
+  transition:all .2s ease;
 }
-.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
-@media(max-width:650px){
-  .page{width:calc(100% - 16px);padding-top:16px}
-  .hero{padding:34px 18px;border-radius:28px}
-  .content{padding:22px 19px;border-radius:27px}
+.links a:hover{
+  transform:translateY(-2px);
+  background:#fff;
+  color:#1c435c;
+  box-shadow:6px 6px 14px var(--sd),-6px -6px 14px var(--sl);
+}
+
+/* Footer */
+.footer{
+  text-align:center;
+  margin-top:40px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .page{width:calc(100% - 22px);padding-top:20px}
+  .hero{padding:36px 18px;border-radius:28px}
+  .card{padding:20px 18px}
+  .bullet-item{padding:14px 15px}
 }
 </style>
 </head>
 <body>
 <main class="page">
 
-<section class="hero">
-  <div class="icon">🧒</div>
-  <h1>Child Privacy Policy</h1>
-  <p class="subtitle">
-    This Child Privacy Policy explains how Rush Box approaches children's privacy
-    and the use of its games by children.
-  </p>
-  <div class="meta">
-    <strong>Effective Date:</strong> [Insert Date] &nbsp; • &nbsp;
-    <strong>Last Updated:</strong> [Insert Date]
-  </div>
-</section>
+  <!-- Hero Overview -->
+  <section class="hero">
+    <div class="logo">🧒</div>
+    <div class="badge">Family & Child Safety</div>
+    <h1>Child Privacy Policy</h1>
+    <p class="subtitle">
+      Rush Box is committed to providing a safe, delightful, and wholesome arcade gaming experience that protects the privacy of children and families.
+    </p>
+    <div class="meta-badge">
+      <span><strong>Effective Date:</strong> September 1, 2026</span>
+      <span>•</span>
+      <span><strong>Last Updated:</strong> September 1, 2026</span>
+    </div>
+  </section>
 
-<section class="content">
+  <!-- 1. Our Commitment to Family & Child Safety -->
+  <section class="section">
+    <h2 class="section-title">1. Our Commitment to Family & Child Safety</h2>
+    <div class="card">
+      <p>
+        Rush Box is designed to provide family-friendly, wholesome, and accessible casual arcade games for players of all ages. We take child privacy and online safety very seriously and comply with the <strong>Children's Online Privacy Protection Act (COPPA)</strong>, <strong>GDPR-K (General Data Protection Regulation for Children)</strong>, and <strong>Google Play Families Policies</strong>.
+      </p>
+    </div>
+  </section>
 
-<h2>1. Our Commitment to Children's Privacy</h2>
-<p>
-Rush Box is committed to protecting the privacy of children and providing a safe,
-age-appropriate gaming experience. We do not intentionally ask children to provide
-personal information to play the core Rush Box games.
-</p>
-<p>
-The current Rush Box collection includes <strong>Arrow Tap Out</strong>,
-<strong>Tic Tac Toe</strong>, and <strong>Fruit Slice</strong>.
-</p>
+  <!-- 2. Zero Personal Data Collected From Children -->
+  <section class="section">
+    <h2 class="section-title">2. Zero Personal Data Collected From Children</h2>
+    <div class="card">
+      <p>
+        Children can play all core games freely without ever providing personal identification:
+      </p>
+      <div class="bullet-list">
+        
+        <div class="bullet-item">
+          <strong>❌ No Account Required</strong>
+          <span>Young players can jump straight into gameplay in Guest mode with zero registration or email verification required.</span>
+        </div>
 
-<h2>2. No Account Required</h2>
-<p>
-The core Rush Box games currently do not require a child to create an account,
-provide an email address, provide a phone number, or submit a real name in order
-to play.
-</p>
-<p>
-We do not intentionally require children to create social profiles or provide
-personal contact information to access the core gameplay experience.
-</p>
+        <div class="bullet-item">
+          <strong>❌ No Personal Contact Information</strong>
+          <span>We never solicit or collect real names, home addresses, phone numbers, school details, or photos from children.</span>
+        </div>
 
-<h2>3. Information We Do Not Intentionally Collect From Children</h2>
-<p>
-We do not intentionally request or collect the following information directly
-from children through the core gameplay experience:
-</p>
-<ul>
-  <li>Full name</li>
-  <li>Home or physical address</li>
-  <li>Email address</li>
-  <li>Phone number</li>
-  <li>Passwords</li>
-  <li>Government identification information</li>
-  <li>Financial or payment information</li>
-  <li>Contacts or address books</li>
-  <li>Private messages</li>
-  <li>Photos, videos, microphone recordings, or camera content</li>
-</ul>
+        <div class="bullet-item">
+          <strong>❌ No Device Sensor Access</strong>
+          <span>No microphone, camera, contacts, or personal media files are ever accessed or requested.</span>
+        </div>
 
-<h2>4. Gameplay Data</h2>
-<p>
-Rush Box may store certain gameplay information locally on the device, such as
-level progress, scores, game settings, game-specific coins, power-up inventory,
-unlocked items, and other gameplay preferences.
-</p>
-<p>
-This information is used to provide the game's functionality and maintain progress.
-It is not intended to identify a child personally.
-</p>
+        <div class="bullet-item">
+          <strong>❌ No Social Chat Rooms</strong>
+          <span>There are no open public chat rooms, direct messaging channels, or unmoderated player-to-player interactions.</span>
+        </div>
 
-<h2>5. Analytics</h2>
-<p>
-Rush Box uses <strong>Google Analytics for Firebase</strong> to understand general
-application and gameplay usage and to improve the games.
-</p>
-<p>
-Depending on the device, operating system, configuration, and applicable settings,
-analytics services may process technical and usage information such as app events,
-session information, device or application information, operating system information,
-and pseudonymous identifiers.
-</p>
-<p>
-We do not intentionally configure Rush Box to collect a child's name, email address,
-phone number, or other directly identifying information as part of normal gameplay
-analytics.
-</p>
+      </div>
+    </div>
+  </section>
 
-<h2>6. Advertising</h2>
-<p>
-Rush Box may use <strong>Google AdMob</strong> and AdMob Mediation, including
-<strong>Meta Audience Network</strong> as a mediation demand source, to support
-advertising within the application.
-</p>
-<p>
-Advertising services may process technical information, advertising identifiers,
-IP address, approximate location, ad interactions, and other information necessary
-for advertising delivery, measurement, security, and fraud prevention, subject to
-the applicable configuration and legal requirements.
-</p>
+  <!-- 3. Child-Appropriate Advertising Standards -->
+  <section class="section">
+    <h2 class="section-title">3. Child-Safe Advertising Standards</h2>
+    <div class="card">
+      <p>
+        Where advertisements are shown, we adhere strictly to child-safe advertising requirements:
+      </p>
+      <ul class="bullet-points">
+        <li><strong>No Behavioral Tracking:</strong> No behavioral or interest-based ad tracking is performed on children.</li>
+        <li><strong>Family-Safe Filtering:</strong> Ad content is strictly filtered to ensure age-appropriate, family-safe material.</li>
+        <li><strong>Optional Rewarded Ads:</strong> Rewarded video ads are strictly optional and clearly distinguished from gameplay.</li>
+      </ul>
+    </div>
+  </section>
 
-<div class="note">
-  <strong>Important for Parents and Guardians</strong>
-  <p>
-  Advertising settings, consent mechanisms, age-related settings, and the
-  application's target-audience configuration should be configured according
-  to the applicable laws and the requirements of Google Play, Apple App Store,
-  Google AdMob, Firebase, Meta, and other applicable services before release.
-  </p>
-</div>
+  <!-- 4. Parental Rights & Data Removal -->
+  <section class="section">
+    <h2 class="section-title">4. Parental Rights & Data Removal</h2>
+    <div class="card">
+      <p>
+        Parents or legal guardians have complete authority over their family's devices and gameplay data:
+      </p>
+      <ul class="bullet-points">
+        <li><strong>Local Reset:</strong> You can reset all locally saved scores and unlocks at any time via Settings &rarr; <em>"Reset All Game Progress"</em> or by clearing the application cache.</li>
+        <li><strong>Prompt Deletion:</strong> If you believe personal information of a child has been inadvertently collected, please contact us immediately at <a href="mailto:contact@rushbox.in">contact@rushbox.in</a> or <a href="mailto:contact@connectpi.in">contact@connectpi.in</a>, and we will promptly delete it within 48 hours.</li>
+      </ul>
+    </div>
+  </section>
 
-<h2>7. Personalized Advertising and Consent</h2>
-<p>
-Where applicable law requires parental consent or limits personalized advertising
-for children, Rush Box should use the appropriate advertising and consent settings
-supported by the advertising services.
-</p>
-<p>
-Advertising may be limited to non-personalized or otherwise appropriate advertising
-where required. The availability and behavior of advertisements can vary by region,
-device, advertising inventory, and applicable privacy settings.
-</p>
+  <!-- Contact & Legal Hub -->
+  <section class="contact-card">
+    <h3>Parent & Guardian Support</h3>
+    <p><strong>Developer:</strong> Aditya</p>
+    <p><strong>Email:</strong> contact@connectpi.in / contact@rushbox.in</p>
+    <p><strong>Country:</strong> India</p>
 
-<h2>8. Purchases and Game Items</h2>
-<p>
-Rush Box may contain in-game shops or game-related items. The current games may
-include virtual coins, power-ups, cosmetic items, backgrounds, or other gameplay
-features.
-</p>
-<p>
-Any real-money purchase functionality, if introduced, should be handled through
-the applicable app-store purchase system and subject to the platform's requirements.
-Children should not make purchases without the permission of a parent or guardian.
-</p>
+    <div class="links">
+      <a href="/about">🎮 About Rush Box</a>
+      <a href="/privacy">🔒 Privacy Policy</a>
+      <a href="/terms">📜 Terms of Service</a>
+    </div>
+  </section>
 
-<h2>9. Third-Party Services</h2>
-<p>
-Rush Box uses third-party services that may process information according to their
-own privacy policies and applicable requirements:
-</p>
-<ul>
-  <li><strong>Google Firebase Analytics</strong> — application analytics.</li>
-  <li><strong>Google AdMob</strong> — advertising services.</li>
-  <li><strong>Meta Audience Network</strong> — advertising demand through AdMob Mediation.</li>
-</ul>
-<p>
-Third-party providers may change their SDKs, policies, and data-processing practices.
-Rush Box will update its privacy documentation when material changes require an update.
-</p>
+  <p class="footer">Rush Box • Play a little. Play again.</p>
 
-<h2>10. Parental Rights and Requests</h2>
-<p>
-If you are a parent or legal guardian and believe that a child has provided personal
-information to Rush Box, or if you have questions about information associated with
-a child's use of the application, please contact us.
-</p>
-<p>
-Depending on applicable law, parents or guardians may have rights to request access
-to, correction of, or deletion of applicable personal information.
-</p>
-
-<div class="note">
-  <p><strong>Parent/Guardian Contact</strong></p>
-  <p><strong>Developer:</strong> Aditya </p>
-  <p><strong>Email:</strong> Contact@connectpi.in </p>
-  <p><strong>Country:</strong> India </p>
-</div>
-
-<h2>11. Data Deletion</h2>
-<p>
-Much of the game's gameplay information may be stored locally on the device.
-Parents or guardians can generally remove local game data by deleting the
-application or clearing its application data, where supported by the device.
-This may permanently remove game progress.
-</p>
-<p>
-Requests concerning information processed by third-party analytics or advertising
-providers may also be subject to those providers' procedures and applicable laws.
-</p>
-
-<h2>12. Data Security</h2>
-<p>
-We take reasonable measures to protect information processed through Rush Box.
-However, no application or electronic system can guarantee complete security.
-</p>
-
-<h2>13. Changes to This Child Privacy Policy</h2>
-<p>
-We may update this Child Privacy Policy when new games, features, analytics,
-advertising services, legal requirements, or other material changes are introduced.
-The Last Updated date will be changed when the policy is updated.
-</p>
-
-<h2>14. Relationship to the Main Privacy Policy</h2>
-<p>
-This Child Privacy Policy supplements the main Rush Box Privacy Policy. For broader
-information about data collection, Firebase Analytics, Google AdMob, Meta Audience
-Network, data retention, user rights, and third-party services, please review the
-main Privacy Policy.
-</p>
-<div class="links">
-  <a href="/privacy">Main Privacy Policy</a>
-</div>
-
-<h2>15. Contact</h2>
-<p>
-For questions regarding children's privacy or this policy, please contact:
-</p>
-<div class="note">
-  <p><strong>Developer:</strong> Aditya </p>
-  <p><strong>Privacy Email:</strong> contact@connectpi.in </p>
-</div>
-
-<h2>16. Final Statement</h2>
-<p>
-Rush Box aims to provide children and families with a fun gaming experience while
-taking privacy seriously. We aim to minimize unnecessary collection of personal
-information and to use appropriate privacy and advertising controls for children's
-use where required.
-</p>
-<p><strong>Thank you for playing Rush Box.</strong></p>
-
-</section>
-
-<div class="footer">Rush Box • Play a little. Play again.</div>
 </main>
 </body>
 </html>
