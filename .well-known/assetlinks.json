@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.connectpi.bladerush",
+      "sha256_cert_fingerprints": [
+        "50:B6:1A:7D:94:EC:DE:16:E1:E9:18:65:8E:2E:A5:F3:DC:B9:F9:5F:31:A3:61:C9:0C:D1:42:82:E7:4C:2A:E1"
+      ]
+    }
+  }
+]

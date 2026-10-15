@@ -7,17 +7,17 @@
 <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="manifest" href="/favicon/site.webmanifest">
-<meta name="theme-color" content="#69d0e9">
+<meta name="theme-color" content="#0284c7">
 
-<meta name="description" content="Rush Box — The ultimate Arcade & Casual Gaming Hub. Play Fruit Slice, Arrow Tap Out, Tic Tac Toe, Knife Throw on Web (rushbox.in), Pi Browser (pi.rushbox.in), or Android.">
-<meta name="keywords" content="Rush Box, Casual Games, Arcade Games, Fruit Slice, Arrow Tap Out, Tic Tac Toe, Knife Throw, Pi Network Games, Pi Browser, Android Games">
+<meta name="description" content="Rush Box — The ultimate Arcade & Casual Gaming Hub. Play Fruit Slice, Rush Rope, Arrow Tap Out, Snake Rush, Tic Tac Toe, Knife Throw instantly on Web, Pi Browser, or Android.">
+<meta name="keywords" content="Rush Box, Casual Games, Arcade Games, Rush Rope, Fruit Slice, Arrow Tap Out, Snake Rush, Tic Tac Toe, Knife Throw, Pi Network Games, Pi Browser, Android Games">
 
-<!-- Open Graph / WhatsApp / Facebook -->
+<!-- Open Graph / Social Sharing -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rush Box">
 <meta property="og:url" content="https://rushbox.in/">
 <meta property="og:title" content="Rush Box — Arcade & Casual Gaming Hub">
-<meta property="og:description" content="Small games. Smooth moments. One box full of fun. Play on Web (rushbox.in), Pi Browser (pi.rushbox.in), or Android!">
+<meta property="og:description" content="Fast games. Smooth moments. One box full of fun. Play on Web (rushbox.in), Pi Browser (pi.rushbox.in), or Android!">
 <meta property="og:image" content="https://rushbox.in/assets/logo.png">
 <meta property="og:image:secure_url" content="https://rushbox.in/assets/logo.png">
 <meta property="og:image:type" content="image/png">
@@ -31,1049 +31,356 @@
 <meta name="twitter:description" content="Small games. Smooth moments. One box full of fun. Play on Web, Pi Browser, or Android!">
 <meta name="twitter:image" content="https://rushbox.in/assets/logo.png">
 <title>Rush Box — Arcade & Casual Gaming Hub</title>
-<style>
-:root{
-  --blue:#C6E7FF;--ice:#D4F6FF;--white:#FBFBFB;--peach:#FFDDAE;
-  --text:#263746;--muted:#627789;--dark-blue:#192c3d;
-  --accent:#2b6386;--accent-purple:#884cdb;--accent-pi:#9333ea;
-  --card-bg:rgba(251,251,251,.74);
-  --sd:rgba(119,157,181,.22);--sl:rgba(255,255,255,.94);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;min-height:100vh;
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  color:var(--text);
-  line-height:1.68;
-  background:
-    radial-gradient(circle at 10% 8%,rgba(255,255,255,.95),transparent 28%),
-    radial-gradient(circle at 90% 12%,rgba(255,221,174,.45),transparent 25%),
-    radial-gradient(circle at 50% 100%,rgba(198,231,255,.85),transparent 38%),
-    linear-gradient(145deg,var(--ice),var(--blue) 50%,#edfaff);
-}
 
-/* Container */
-.page{
-  width:min(1100px,calc(100% - 32px));
-  margin:auto;
-  padding:32px 0 60px;
-}
-
-/* Header Nav */
-.header-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 24px;
-  border-radius:24px;
-  background:rgba(251,251,251,.65);
-  box-shadow:6px 6px 18px var(--sd),-6px -6px 18px var(--sl);
-  backdrop-filter:blur(12px);
-  margin-bottom:32px;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  color:var(--dark-blue);
-}
-.brand img{
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  box-shadow:3px 3px 8px var(--sd);
-}
-.brand-name{
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:-.6px;
-}
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-.nav-btn{
-  text-decoration:none;
-  padding:8px 16px;
-  border-radius:14px;
-  font-size:13.5px;
-  font-weight:700;
-  color:#33566e;
-  background:rgba(255,255,255,.7);
-  box-shadow:3px 3px 8px var(--sd),-3px -3px 8px var(--sl);
-  transition:all .2s ease;
-}
-.nav-btn:hover{
-  transform:translateY(-2px);
-  background:#fff;
-  color:#19354a;
-}
-.nav-btn.primary{
-  background:linear-gradient(135deg,#316688,#204b66);
-  color:#fff;
-  box-shadow:4px 4px 12px rgba(49,102,136,.35);
-}
-.nav-btn.primary:hover{
-  background:linear-gradient(135deg,#3c7b9e,#275b7a);
-  color:#fff;
-}
-
-/* Hero Section */
-.hero{
-  text-align:center;
-  padding:56px 28px 48px;
-  border-radius:38px;
-  background:rgba(251,251,251,.74);
-  box-shadow:16px 16px 36px var(--sd),-16px -16px 36px var(--sl);
-  backdrop-filter:blur(16px);
-  position:relative;
-  overflow:hidden;
-}
-.hero-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:6px 16px;
-  border-radius:24px;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.8px;
-  text-transform:uppercase;
-  color:var(--accent);
-  background:rgba(255,255,255,.88);
-  box-shadow:4px 4px 10px var(--sd),-4px -4px 10px var(--sl);
-  margin-bottom:18px;
-}
-.hero-logo{
-  width:96px;
-  height:96px;
-  margin:0 auto 20px;
-  border-radius:28px;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(145deg,#fff,var(--ice));
-  box-shadow:10px 10px 22px var(--sd),-10px -10px 22px var(--sl);
-  transition:transform .35s ease;
-}
-.hero-logo img{
-  width:84px;
-  height:84px;
-  border-radius:22px;
-  object-fit:cover;
-}
-.hero-logo:hover{
-  transform:scale(1.06) rotate(4deg);
-}
-h1{
-  margin:0;
-  font-size:clamp(38px,6.5vw,62px);
-  letter-spacing:-2px;
-  line-height:1.08;
-  color:var(--dark-blue);
-}
-.tagline{
-  max-width:740px;
-  margin:16px auto 0;
-  font-size:21px;
-  font-weight:700;
-  color:#314c61;
-  line-height:1.45;
-}
-.hero-desc{
-  max-width:760px;
-  margin:14px auto 0;
-  font-size:15.5px;
-  line-height:1.8;
-  color:var(--muted);
-}
-
-/* CTA Action Bar */
-.cta-group{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:16px;
-  margin-top:32px;
-}
-.cta-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:14px 26px;
-  border-radius:20px;
-  font-size:15px;
-  font-weight:800;
-  text-decoration:none;
-  cursor:pointer;
-  border:none;
-  transition:all .25s ease;
-}
-.cta-btn.play-web{
-  background:linear-gradient(135deg,#2e698e,#1c4a66);
-  color:#fff;
-  box-shadow:6px 6px 18px rgba(46,105,142,.35),-6px -6px 18px var(--sl);
-}
-.cta-btn.play-web:hover{
-  transform:translateY(-3px);
-  box-shadow:8px 8px 24px rgba(46,105,142,.45);
-}
-.cta-btn.play-pi{
-  background:linear-gradient(135deg,#7e22ce,#581c87);
-  color:#fff;
-  box-shadow:6px 6px 18px rgba(126,34,206,.32),-6px -6px 18px var(--sl);
-}
-.cta-btn.play-pi:hover{
-  transform:translateY(-3px);
-  box-shadow:8px 8px 24px rgba(126,34,206,.45);
-}
-.cta-btn.playstore{
-  background:rgba(255,255,255,.9);
-  padding:8px 14px;
-  border-radius:18px;
-  box-shadow:6px 6px 16px var(--sd),-6px -6px 16px var(--sl);
-}
-.cta-btn.playstore img{
-  height:44px;
-  display:block;
-}
-.cta-btn.playstore:hover{
-  transform:translateY(-3px);
-  background:#fff;
-  box-shadow:8px 8px 22px var(--sd);
-}
-
-/* Sections */
-.section{
-  margin-top:42px;
-}
-.section-header{
-  text-align:center;
-  margin-bottom:24px;
-}
-.section-title{
-  font-size:26px;
-  font-weight:900;
-  letter-spacing:-.6px;
-  color:var(--dark-blue);
-  margin:0 0 6px;
-}
-.section-subtitle{
-  font-size:15px;
-  color:var(--muted);
-  margin:0;
-}
-
-/* 3D Center-Stage Looping Carousel Showcase */
-.showcase-section{
-  position:relative;
-  margin-top:42px;
-}
-.carousel-container{
-  position:relative;
-  width:100%;
-  max-width:1040px;
-  margin:0 auto;
-  padding:10px 0 14px;
-  user-select:none;
-}
-.carousel-viewport{
-  position:relative;
-  width:100%;
-  height:540px;
-  perspective:1200px;
-  perspective-origin:center center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:visible;
-}
-.carousel-track{
-  position:relative;
-  width:100%;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.carousel-slide{
-  position:absolute;
-  width:min(470px, 86vw);
-  height:510px;
-  border-radius:32px;
-  background:rgba(251,251,251,.85);
-  box-shadow:14px 14px 34px var(--sd), -14px -14px 34px var(--sl);
-  backdrop-filter:blur(18px);
-  padding:16px 16px 20px;
-  display:flex;
-  flex-direction:column;
-  cursor:pointer;
-  transition:all .55s cubic-bezier(.25,1,.5,1);
-  transform-style:preserve-3d;
-  will-change:transform, opacity, filter;
-}
-
-/* Slide 3D Positions */
-.carousel-slide.active{
-  transform:translateX(0) scale(1) translateZ(0);
-  opacity:1;
-  z-index:10;
-  cursor:default;
-  filter:none;
-  box-shadow:0 22px 50px rgba(38,55,70,.18), 12px 12px 28px var(--sd), -12px -12px 28px var(--sl);
-}
-.carousel-slide.prev{
-  transform:translateX(calc(-58% - 15px)) scale(.82) translateZ(-80px) rotateY(12deg);
-  opacity:.58;
-  z-index:5;
-  filter:blur(.6px);
-}
-.carousel-slide.next{
-  transform:translateX(calc(58% + 15px)) scale(.82) translateZ(-80px) rotateY(-12deg);
-  opacity:.58;
-  z-index:5;
-  filter:blur(.6px);
-}
-.carousel-slide.hidden{
-  transform:translateX(0) scale(.65) translateZ(-160px);
-  opacity:0;
-  z-index:1;
-  pointer-events:none;
-}
-
-/* Slide Media Container (Fixes Aspect Ratio differences) */
-.slide-media-box{
-  flex:1;
-  width:100%;
-  min-height:0;
-  border-radius:24px;
-  background:linear-gradient(145deg,#edf8ff,#d9effc);
-  box-shadow:inset 3px 3px 8px rgba(119,157,181,.2), inset -3px -3px 8px rgba(255,255,255,.9);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px;
-  overflow:hidden;
-  position:relative;
-}
-.slide-media-box img{
-  max-width:100%;
-  max-height:100%;
-  width:auto;
-  height:auto;
-  object-fit:contain;
-  border-radius:18px;
-  box-shadow:0 10px 24px rgba(0,0,0,.15);
-  transition:transform .35s ease;
-}
-.carousel-slide.active:hover .slide-media-box img{
-  transform:scale(1.03);
-}
-
-.slide-media-box.portrait img{
-  max-height:340px;
-  border:2px solid rgba(255,255,255,.75);
-}
-.slide-media-box.landscape img{
-  max-height:290px;
-  width:100%;
-  object-fit:cover;
-  border:2px solid rgba(255,255,255,.75);
-}
-
-/* Slide Caption */
-.slide-caption{
-  padding:14px 10px 0;
-  text-align:center;
-}
-.slide-badge{
-  display:inline-block;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.6px;
-  text-transform:uppercase;
-  color:var(--accent);
-  background:rgba(255,255,255,.92);
-  padding:4px 12px;
-  border-radius:14px;
-  box-shadow:2px 2px 6px var(--sd), -2px -2px 6px var(--sl);
-  margin-bottom:6px;
-}
-.slide-caption h3{
-  margin:0 0 4px;
-  font-size:18px;
-  font-weight:900;
-  color:var(--dark-blue);
-  letter-spacing:-.3px;
-}
-.slide-caption p{
-  margin:0;
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.5;
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-}
-
-/* Navigation Arrow Buttons */
-.carousel-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  background:rgba(255,255,255,.9);
-  border:none;
-  font-size:26px;
-  font-weight:700;
-  color:var(--dark-blue);
-  cursor:pointer;
-  display:grid;
-  place-items:center;
-  box-shadow:6px 6px 16px var(--sd), -6px -6px 16px var(--sl);
-  backdrop-filter:blur(8px);
-  z-index:25;
-  transition:all .22s ease;
-}
-.carousel-btn:hover{
-  background:#fff;
-  transform:translateY(-50%) scale(1.1);
-  box-shadow:8px 8px 22px var(--sd);
-  color:#102538;
-}
-.carousel-btn.prev{left:6px}
-.carousel-btn.next{right:6px}
-
-/* Dots Navigation */
-.carousel-dots{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-  margin-top:20px;
-}
-.carousel-dot{
-  width:12px;
-  height:12px;
-  border-radius:6px;
-  background:rgba(119,157,181,.35);
-  border:none;
-  cursor:pointer;
-  transition:all .3s ease;
-  padding:0;
-}
-.carousel-dot.active{
-  width:34px;
-  background:linear-gradient(135deg,#316688,#1c4a66);
-  box-shadow:0 3px 8px rgba(49,102,136,.4);
-}
-
-/* Auto-scroll progress line */
-.carousel-progress{
-  width:140px;
-  height:4px;
-  background:rgba(119,157,181,.2);
-  border-radius:2px;
-  margin:12px auto 0;
-  overflow:hidden;
-}
-.carousel-progress-bar{
-  width:0%;
-  height:100%;
-  background:linear-gradient(90deg,var(--accent),#884cdb);
-  border-radius:2px;
-  transition:width .08s linear;
-}
-
-/* Game Catalog Grid */
-.games-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-}
-.game-card{
-  padding:24px;
-  border-radius:28px;
-  background:var(--card-bg);
-  box-shadow:9px 9px 22px var(--sd),-9px -9px 22px var(--sl);
-  transition:transform .24s ease, box-shadow .24s ease;
-  display:flex;
-  gap:18px;
-  align-items:flex-start;
-}
-.game-card:hover{
-  transform:translateY(-4px);
-  box-shadow:12px 12px 28px var(--sd);
-}
-.game-icon{
-  width:60px;height:60px;
-  min-width:60px;
-  border-radius:20px;
-  display:grid;place-items:center;
-  font-size:30px;
-  background:linear-gradient(145deg,#fff,var(--blue));
-  box-shadow:6px 6px 14px var(--sd),-6px -6px 14px var(--sl);
-}
-.game-info h3{
-  margin:0 0 6px;
-  font-size:19px;
-  font-weight:900;
-  color:var(--dark-blue);
-}
-.game-info p{
-  margin:0;
-  font-size:14px;
-  line-height:1.68;
-  color:var(--muted);
-}
-
-/* Features Grid */
-.features-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-.feature-card{
-  padding:24px;
-  border-radius:26px;
-  background:var(--card-bg);
-  box-shadow:8px 8px 20px var(--sd),-8px -8px 20px var(--sl);
-  transition:transform .2s ease;
-}
-.feature-card:hover{
-  transform:translateY(-3px);
-}
-.feature-icon{
-  font-size:28px;
-  margin-bottom:10px;
-}
-.feature-card strong{
-  display:block;
-  font-size:16px;
-  font-weight:800;
-  color:var(--dark-blue);
-  margin-bottom:8px;
-}
-.feature-card span{
-  display:block;
-  font-size:13.5px;
-  line-height:1.65;
-  color:var(--muted);
-}
-
-/* Pi Browser Dedicated Card */
-.pi-banner{
-  margin-top:36px;
-  padding:32px 30px;
-  border-radius:32px;
-  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(235,220,255,.75));
-  box-shadow:12px 12px 28px var(--sd),-12px -12px 28px var(--sl);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
-.pi-banner-content h3{
-  margin:0 0 8px;
-  font-size:22px;
-  font-weight:900;
-  color:#4a127a;
-}
-.pi-banner-content p{
-  margin:0;
-  font-size:14.5px;
-  color:#5d367e;
-  max-width:620px;
-}
-.pi-btn-group{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  min-width:210px;
-}
-
-/* Modal Popup for Pi Browser */
-.modal-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(20,38,54,.55);
-  backdrop-filter:blur(8px);
-  display:none;
-  place-items:center;
-  z-index:9999;
-  padding:16px;
-}
-.modal-overlay.active{
-  display:grid;
-}
-.modal-card{
-  width:min(520px,100%);
-  background:#fff;
-  border-radius:32px;
-  padding:34px 28px 28px;
-  box-shadow:0 24px 60px rgba(0,0,0,.25);
-  text-align:center;
-  position:relative;
-  animation:popIn .25s ease-out;
-}
-@keyframes popIn{
-  from{transform:scale(.92);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
-.modal-close{
-  position:absolute;
-  top:18px;
-  right:20px;
-  width:34px;
-  height:34px;
-  border-radius:50%;
-  background:rgba(0,0,0,.06);
-  border:none;
-  font-size:18px;
-  cursor:pointer;
-  display:grid;
-  place-items:center;
-  color:#555;
-  transition:background .2s;
-}
-.modal-close:hover{
-  background:rgba(0,0,0,.12);
-}
-.modal-icon{
-  width:68px;
-  height:68px;
-  margin:0 auto 16px;
-  border-radius:22px;
-  background:linear-gradient(135deg,#9333ea,#6b21a8);
-  color:#fff;
-  font-size:32px;
-  display:grid;
-  place-items:center;
-  box-shadow:0 8px 20px rgba(147,51,234,.35);
-}
-.modal-card h3{
-  margin:0 0 10px;
-  font-size:22px;
-  font-weight:900;
-  color:var(--dark-blue);
-}
-.modal-card p{
-  font-size:14.5px;
-  color:var(--muted);
-  margin:0 0 20px;
-  line-height:1.65;
-}
-.copy-box{
-  display:flex;
-  align-items:center;
-  background:#f1f5f9;
-  border:2px dashed #cbd5e1;
-  border-radius:18px;
-  padding:8px 10px 8px 16px;
-  margin-bottom:18px;
-}
-.copy-url{
-  font-family:monospace;
-  font-size:16px;
-  font-weight:700;
-  color:#334155;
-  flex:1;
-  text-align:left;
-}
-.copy-btn{
-  background:linear-gradient(135deg,#7e22ce,#581c87);
-  color:#fff;
-  border:none;
-  padding:10px 18px;
-  border-radius:12px;
-  font-weight:800;
-  font-size:13px;
-  cursor:pointer;
-  transition:opacity .2s;
-}
-.copy-btn:hover{
-  opacity:.9;
-}
-.steps-list{
-  text-align:left;
-  background:#f8fafc;
-  border-radius:18px;
-  padding:16px 20px;
-  font-size:13.5px;
-  color:#475569;
-  line-height:1.7;
-  margin-bottom:20px;
-}
-.steps-list ol{
-  margin:0;
-  padding-left:20px;
-}
-.direct-open-btn{
-  display:inline-block;
-  width:100%;
-  padding:14px;
-  border-radius:16px;
-  background:linear-gradient(135deg,#2e698e,#1c4a66);
-  color:#fff;
-  text-decoration:none;
-  font-weight:800;
-  font-size:14px;
-}
-
-/* Toast notification */
-.toast{
-  position:fixed;
-  bottom:30px;
-  left:50%;
-  transform:translateX(-50%) translateY(100px);
-  background:#1e293b;
-  color:#fff;
-  padding:12px 24px;
-  border-radius:30px;
-  font-size:14px;
-  font-weight:700;
-  box-shadow:0 10px 25px rgba(0,0,0,.3);
-  opacity:0;
-  transition:all .3s ease;
-  z-index:10000;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.toast.show{
-  transform:translateX(-50%) translateY(0);
-  opacity:1;
-}
-
-/* Footer */
-.footer{
-  margin-top:54px;
-  padding:36px 28px 24px;
-  border-radius:34px;
-  background:rgba(251,251,251,.72);
-  box-shadow:12px 12px 28px var(--sd),-12px -12px 28px var(--sl);
-  text-align:center;
-}
-.footer-logo-row{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:16px;
-}
-.footer-logo-row img{
-  width:36px;
-  height:36px;
-  border-radius:10px;
-}
-.footer-logo-row span{
-  font-size:20px;
-  font-weight:900;
-  color:var(--dark-blue);
-}
-.footer-links{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px 20px;
-  margin:18px 0;
-}
-.footer-link{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:700;
-  color:#355870;
-  padding:8px 14px;
-  border-radius:12px;
-  background:rgba(255,255,255,.7);
-  box-shadow:3px 3px 8px var(--sd),-3px -3px 8px var(--sl);
-  transition:all .2s;
-}
-.footer-link:hover{
-  transform:translateY(-2px);
-  background:#fff;
-  color:#153449;
-}
-.footer-copy{
-  margin-top:24px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* Responsive queries */
-@media(max-width:900px){
-  .screenshots-grid{grid-template-columns:repeat(2,1fr)}
-  .features-grid{grid-template-columns:repeat(2,1fr)}
-  .pi-banner{flex-direction:column;text-align:center}
-  .pi-btn-group{width:100%}
-}
-@media(max-width:650px){
-  .page{width:calc(100% - 20px);padding-top:16px}
-  .header-nav{padding:12px 16px}
-  .hero{padding:40px 18px;border-radius:30px}
-  .tagline{font-size:18px}
-  .hero-logo{width:80px;height:80px;border-radius:24px}
-  .hero-logo img{width:70px;height:70px}
-  .cta-group{flex-direction:column;align-items:stretch}
-  .cta-btn{width:100%}
-  .screenshots-grid{grid-template-columns:repeat(2,1fr)}
-  .games-grid{grid-template-columns:1fr}
-  .features-grid{grid-template-columns:1fr}
-  .feature-card{padding:20px}
-}
-</style>
+<!-- Modern Shared Stylesheet -->
+<link rel="stylesheet" href="/assets/main.css">
 </head>
 <body>
 
-<div class="page">
+<div class="page-container">
 
   <!-- Header Navigation Bar -->
-  <header class="header-nav">
-    <a href="/" class="brand">
-      <img src="/assets/logo.png" alt="Rush Box Logo" onerror="this.src='/favicon/favicon-96x96.png'">
-      <span class="brand-name">Rush Box</span>
-    </a>
-    <nav class="nav-links">
-      <a href="/about" class="nav-btn">About</a>
-      <a href="https://rushbox.in" target="_blank" rel="noopener" class="nav-btn primary">Play Web &rarr;</a>
+  <header class="site-header">
+    <nav class="nav-bar">
+      <a href="/" class="brand-link">
+        <div class="brand-icon">
+          <img src="/assets/logo.png" alt="Rush Box Logo" onerror="this.src='/favicon/favicon-96x96.png'">
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Rush Box</span>
+          <span class="brand-tag">Arcade</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#games" class="nav-link">Games</a>
+        <a href="#showcase" class="nav-link">Highlights</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="https://rushbox.in" target="_blank" rel="noopener" class="nav-cta">
+          Play Web &rarr;
+        </a>
+      </div>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Main Landing Content -->
   <main>
-    <section class="hero">
-      <div class="hero-logo">
-        <img src="/assets/logo.png" alt="Rush Box" onerror="this.src='/favicon/favicon-96x96.png'">
-      </div>
-      <div class="hero-badge">🎮 Arcade & Casual Gaming Hub</div>
-      <h1>Rush Box</h1>
-      <p class="tagline">Small games. Smooth moments. One box full of fun.</p>
-      <p class="hero-desc">
-        Rush Box brings the best of casual and arcade gaming together into a single ultra-responsive, privacy-centric gaming hub — featuring rich physics, smooth animations, global level progression, and seamless cross-platform cloud sync across Web, Pi Browser, and Mobile.
-      </p>
+    <!-- Hero Section -->
+    <section class="hero-card">
+      <div class="hero-grid">
+        <!-- Hero Text & CTAs -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>✨</span> 100% Free • Web, Pi & Android Gaming Hub
+          </div>
+          <h1 class="hero-title">
+            All Your Favorite <span class="highlight">Casual Games</span> in One Box.
+          </h1>
+          <p class="hero-tagline">
+            Small games. Smooth moments. Pure instant arcade fun.
+          </p>
+          <p class="hero-desc">
+            Rush Box brings physics puzzles, arcade slicers, and classic multiplayer favorites together into one fast, privacy-safe hub. Jump into gameplay instantly across Web, Pi Browser, or Android with 60 FPS performance and cloud save.
+          </p>
 
-      <!-- Multi-Platform Call to Actions -->
-      <div class="cta-group">
-        <!-- Play on Web -->
-        <a href="https://rushbox.in" target="_blank" rel="noopener" class="cta-btn play-web">
-          <span>🌐</span> Play Web Game (rushbox.in)
-        </a>
+          <!-- Multi-Platform Call to Actions -->
+          <div class="hero-cta-row">
+            <!-- Play on Web -->
+            <a href="https://rushbox.in" target="_blank" rel="noopener" class="btn-primary">
+              <span>🌐</span> Play Web Game (rushbox.in)
+            </a>
 
-        <!-- Open in Pi Browser -->
-        <button type="button" class="cta-btn play-pi" onclick="openPiBrowserHandler()">
-          <span>🟣</span> Open in Pi Browser
-        </button>
+            <!-- Open in Pi Browser -->
+            <button type="button" class="btn-pi" onclick="openPiBrowserHandler()">
+              <span>🟣</span> Open in Pi Browser
+            </button>
 
-        <!-- Google Play Store -->
-        <a href="https://play.google.com/store/apps/details?id=com.connectpi.bladerush" target="_blank" rel="noopener" class="cta-btn playstore" title="Get it on Google Play">
-          <img src="/assets/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play">
-        </a>
-      </div>
-    </section>
+            <!-- Google Play Store -->
+            <a href="https://play.google.com/store/apps/details?id=com.connectpi.bladerush" target="_blank" rel="noopener" class="btn-playstore" title="Get it on Google Play">
+              <img src="/assets/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play">
+            </a>
+          </div>
 
-    <!-- 3D Center-Stage Looping Showcase Carousel -->
-    <section class="section showcase-section">
-      <div class="section-header">
-        <h2 class="section-title">App Highlights & Gameplay</h2>
-        <p class="section-subtitle">Swipe or let the auto-scrolling preview take you inside Rush Box</p>
-      </div>
-
-      <div class="carousel-container" id="showcaseCarousel">
-        <div class="carousel-viewport">
-          <div class="carousel-track" id="carouselTrack">
-            
-            <!-- Slide 1: Rush Box Library (Portrait 01.png) -->
-            <div class="carousel-slide active" data-index="0" onclick="handleSlideClick(0)">
-              <div class="slide-media-box portrait">
-                <img src="/assets/01.png" alt="Rush Box Instant Play Arcade Hub" loading="eager">
-              </div>
-              <div class="slide-caption">
-                <span class="slide-badge">🎮 Instant Arcade Hub</span>
-                <h3>Rush Box Game Library</h3>
-                <p>Unified lightweight arcade launcher with 60+ FPS native rendering & fast switching</p>
-              </div>
-            </div>
-
-            <!-- Slide 2: Tic Tac Toe (Portrait 02.png) -->
-            <div class="carousel-slide next" data-index="1" onclick="handleSlideClick(1)">
-              <div class="slide-media-box portrait">
-                <img src="/assets/02.png" alt="Tic Tac Toe AI Arena" loading="lazy">
-              </div>
-              <div class="slide-caption">
-                <span class="slide-badge">⭕ Classic & Tactical</span>
-                <h3>Tic Tac Toe AI Arena</h3>
-                <p>Classic 3x3 and 4x4 boards with 3-tier intelligent AI & timed local PvP matches</p>
-              </div>
-            </div>
-
-            <!-- Slide 3: Arrow Tap Out (Landscape 03.png) -->
-            <div class="carousel-slide hidden" data-index="2" onclick="handleSlideClick(2)">
-              <div class="slide-media-box landscape">
-                <img src="/assets/03.png" alt="Arrow Tap Out Spatial Puzzle" loading="lazy">
-              </div>
-              <div class="slide-caption">
-                <span class="slide-badge">➡️ 3D Spatial Puzzle</span>
-                <h3>Arrow Tap Out Trail</h3>
-                <p>Untangle intricate multi-directional arrow boards across themed chapters & levels</p>
-              </div>
-            </div>
-
-            <!-- Slide 4: Fruit Slice (Landscape 04.png) -->
-            <div class="carousel-slide prev" data-index="3" onclick="handleSlideClick(3)">
-              <div class="slide-media-box landscape">
-                <img src="/assets/04.png" alt="Fruit Slice Katana Runes" loading="lazy">
-              </div>
-              <div class="slide-caption">
-                <span class="slide-badge">🍉 Katana Runes Action</span>
-                <h3>Fruit Slice Rush</h3>
-                <p>Slice flying fruits, trigger devastating combo streaks, and dodge explosives</p>
-              </div>
-            </div>
-
+          <!-- Feature Trust Chips -->
+          <div class="hero-chips">
+            <span class="chip-item"><span class="chip-dot"></span> 6+ Instant Games</span>
+            <span class="chip-item"><span class="chip-dot"></span> 60 FPS Native Physics</span>
+            <span class="chip-item"><span class="chip-dot"></span> Cloud XP & Level 1–100</span>
+            <span class="chip-item"><span class="chip-dot"></span> 100% Family & Guest Safe</span>
+            <span class="chip-item"><span class="chip-dot"></span> Offline Ready</span>
           </div>
         </div>
 
-        <!-- Navigation Arrow Buttons -->
-        <button type="button" class="carousel-btn prev" onclick="prevSlide()" aria-label="Previous Slide">&lsaquo;</button>
-        <button type="button" class="carousel-btn next" onclick="nextSlide()" aria-label="Next Slide">&rsaquo;</button>
-
-        <!-- Indicator Dots -->
-        <div class="carousel-dots" id="carouselDots">
-          <button type="button" class="carousel-dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
-          <button type="button" class="carousel-dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
-          <button type="button" class="carousel-dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
-          <button type="button" class="carousel-dot" onclick="goToSlide(3)" aria-label="Slide 4"></button>
-        </div>
-
-        <!-- Auto-scroll countdown progress line -->
-        <div class="carousel-progress">
-          <div class="carousel-progress-bar" id="carouselProgressBar"></div>
+        <!-- Hero Visual Mockup -->
+        <div class="hero-preview-box">
+          <div class="device-frame">
+            <div class="device-screen">
+              <img src="/assets/01.png" alt="Rush Box Arcade Hub Gameplay" id="heroPreviewImg">
+              <div class="device-badge-overlay">
+                <span>🎮 Instant Game Launcher</span>
+                <small>60+ FPS Ready</small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Game Catalog -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">Our Game Catalog</h2>
-        <p class="section-subtitle">Crafted arcade experiences with bespoke audio and instant replayability</p>
+    <!-- Interactive App Highlights & Showcase -->
+    <section class="section" id="showcase">
+      <div class="section-head">
+        <span class="section-badge">Visual Showcase</span>
+        <h2 class="section-title">App Highlights & Gameplay</h2>
+        <p class="section-subtitle">Take a tour through Rush Box’s polished screens and physics mechanics.</p>
       </div>
+
+      <div class="showcase-wrapper">
+        <!-- Interactive Tabs -->
+        <div class="showcase-tabs" id="showcaseTabs">
+          <button type="button" class="tab-btn active" onclick="selectShowcase(0)">
+            🎮 Arcade Hub
+          </button>
+          <button type="button" class="tab-btn" onclick="selectShowcase(1)">
+            ✂️ Rush Rope <span class="badge-new">NEW</span>
+          </button>
+          <button type="button" class="tab-btn" onclick="selectShowcase(2)">
+            🍉 Fruit Slice
+          </button>
+          <button type="button" class="tab-btn" onclick="selectShowcase(3)">
+            ➡️ Arrow Escape
+          </button>
+          <button type="button" class="tab-btn" onclick="selectShowcase(4)">
+            ⭕ Tic Tac Toe
+          </button>
+        </div>
+
+        <!-- Display Area -->
+        <div class="showcase-display">
+          <div class="showcase-visual">
+            <div class="showcase-img-box">
+              <img src="/assets/01.png" id="showcaseImage" alt="Rush Box Showcase">
+            </div>
+          </div>
+
+          <div class="showcase-details">
+            <h3 id="showcaseTitle">Rush Box Game Library</h3>
+            <p id="showcaseDesc">Unified lightweight arcade hub featuring instant game launch, 60 FPS native rendering, and seamless cross-platform cloud progress tracking.</p>
+
+            <ul class="showcase-feature-list" id="showcaseList">
+              <li>Instant play without cumbersome installations</li>
+              <li>Shared global XP progression (Levels 1 to 100)</li>
+              <li>RB Points meta-economy with daily streak rewards</li>
+            </ul>
+
+            <a href="https://rushbox.in" target="_blank" rel="noopener" class="btn-primary" id="showcaseCta">
+              Launch in Browser &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Catalog (With Rush Rope) -->
+    <section class="section" id="games">
+      <div class="section-head">
+        <span class="section-badge">Game Library</span>
+        <h2 class="section-title">Our Featured Game Catalog</h2>
+        <p class="section-subtitle">Each game is handcrafted with responsive controls, bespoke audio, and high replay value.</p>
+      </div>
+
       <div class="games-grid">
 
-        <!-- Fruit Slice -->
+        <!-- 1. Rush Rope (NEW) -->
         <article class="game-card">
-          <div class="game-icon">🍉</div>
-          <div class="game-info">
-            <h3>Fruit Slice</h3>
-            <p>Master the Katana Runes level trail! Slice flying fruits, trigger devastating combo chains, dodge explosives, and test your speed in Timed & Timeless Rush modes.</p>
+          <span class="game-card-badge">NEW</span>
+          <div class="game-card-top">
+            <div class="game-thumb" style="border-color: rgba(132, 204, 22, 0.4);">
+              <img src="/assets/games/rush_rope.webp" alt="Rush Rope Game Thumbnail" onerror="this.src='/favicon/favicon-96x96.png'">
+            </div>
+            <div class="game-card-title-group">
+              <h3>Rush Rope</h3>
+              <span class="game-tag" style="background:#f7fee7; color:#4d7c0f;">Physics Puzzle</span>
+            </div>
+          </div>
+          <p class="game-card-desc">
+            Slice ropes at the perfect angle, collect golden stars, and feed candy to Chomp in this classic physics puzzle adventure with multi-chapter levels!
+          </p>
+          <div class="game-card-footer">
+            <span>⭐ Star Collect & Levels</span>
+            <a href="https://rushbox.in" target="_blank" rel="noopener">Play &rarr;</a>
           </div>
         </article>
 
-        <!-- Arrow Tap Out -->
+        <!-- 2. Fruit Slice -->
         <article class="game-card">
-          <div class="game-icon">➡️</div>
-          <div class="game-info">
-            <h3>Arrow Tap Out</h3>
-            <p>A spatial 3D puzzle challenge. Tap arrows to untangle intricate multi-directional boards across themed chapters with special tiles and power-ups.</p>
+          <div class="game-card-top">
+            <div class="game-thumb" style="border-color: rgba(239, 68, 68, 0.35);">
+              <img src="/assets/games/fruit_slice.webp" alt="Fruit Slice Game Thumbnail" onerror="this.src='/favicon/favicon-96x96.png'">
+            </div>
+            <div class="game-card-title-group">
+              <h3>Fruit Slice</h3>
+              <span class="game-tag" style="background:#fef2f2; color:#b91c1c;">Arcade Slicer</span>
+            </div>
+          </div>
+          <p class="game-card-desc">
+            Master the Katana Runes level trail! Slice flying fruits, trigger devastating multi-blade combos, dodge explosives, and test your speed in Rush modes.
+          </p>
+          <div class="game-card-footer">
+            <span>🍉 Combos & Blade Runes</span>
+            <a href="https://rushbox.in" target="_blank" rel="noopener">Play &rarr;</a>
           </div>
         </article>
 
-        <!-- Tic Tac Toe -->
+        <!-- 3. Arrow Tap Out -->
         <article class="game-card">
-          <div class="game-icon">⭕</div>
-          <div class="game-info">
-            <h3>Tic Tac Toe</h3>
-            <p>Classic 3x3 and tactical 4x4 boards. Play against intelligent AI across three difficulty tiers or battle friends in timed local PvP matches.</p>
+          <div class="game-card-top">
+            <div class="game-thumb" style="border-color: rgba(6, 182, 212, 0.35);">
+              <img src="/assets/games/arrow_tap_out.webp" alt="Arrow Tap Out Game Thumbnail" onerror="this.src='/favicon/favicon-96x96.png'">
+            </div>
+            <div class="game-card-title-group">
+              <h3>Arrow Tap Out</h3>
+              <span class="game-tag" style="background:#ecfeff; color:#0e7490;">3D Spatial Puzzle</span>
+            </div>
+          </div>
+          <p class="game-card-desc">
+            A mind-bending spatial puzzle. Tap directional arrows to untangle intricate boards across themed chapters, including the intense Arrow Escape V2.
+          </p>
+          <div class="game-card-footer">
+            <span>➡️ Escape Modes & Skins</span>
+            <a href="https://rushbox.in" target="_blank" rel="noopener">Play &rarr;</a>
           </div>
         </article>
 
-        <!-- Knife Throw -->
+        <!-- 4. Snake Rush -->
         <article class="game-card">
-          <div class="game-icon">🗡️</div>
-          <div class="game-info">
-            <h3>Knife Throw</h3>
-            <p>Reflex and precision arcade action. Hit spinning targets, avoid hitting embedded blades, and unlock legendary blade styles.</p>
+          <div class="game-card-top">
+            <div class="game-thumb" style="border-color: rgba(16, 185, 129, 0.35);">
+              <img src="/assets/games/snake.webp" alt="Snake Rush Game Thumbnail" onerror="this.src='/favicon/favicon-96x96.png'">
+            </div>
+            <div class="game-card-title-group">
+              <h3>Snake Rush</h3>
+              <span class="game-tag" style="background:#ecfdf5; color:#047857;">Classic Arcade</span>
+            </div>
+          </div>
+          <p class="game-card-desc">
+            Retro snake arcade modernized with smooth swipe & button controls, unlockable scenery environments, multiple speed tiers, and global leaderboards.
+          </p>
+          <div class="game-card-footer">
+            <span>🐍 Leaderboards & Sceneries</span>
+            <a href="https://rushbox.in" target="_blank" rel="noopener">Play &rarr;</a>
+          </div>
+        </article>
+
+        <!-- 5. Tic Tac Toe -->
+        <article class="game-card">
+          <div class="game-card-top">
+            <div class="game-thumb" style="border-color: rgba(99, 102, 241, 0.35);">
+              <img src="/assets/games/tic_tac_toe.webp" alt="Tic Tac Toe Game Thumbnail" onerror="this.src='/favicon/favicon-96x96.png'">
+            </div>
+            <div class="game-card-title-group">
+              <h3>Tic Tac Toe AI</h3>
+              <span class="game-tag" style="background:#eef2ff; color:#4338ca;">Tactical Strategy</span>
+            </div>
+          </div>
+          <p class="game-card-desc">
+            Classic 3x3 and deep 4x4 tactical boards. Challenge intelligent 3-tier minimax AI or battle against friends in real-time local pass-and-play PvP.
+          </p>
+          <div class="game-card-footer">
+            <span>⭕ 3x3, 4x4 & Local 2P</span>
+            <a href="https://rushbox.in" target="_blank" rel="noopener">Play &rarr;</a>
+          </div>
+        </article>
+
+        <!-- 6. Knife Throw -->
+        <article class="game-card">
+          <div class="game-card-top">
+            <div class="game-thumb" style="border-color: rgba(245, 158, 11, 0.35);">
+              <img src="/assets/games/knife_throw.webp" alt="Knife Throw Game Thumbnail" onerror="this.src='/favicon/favicon-96x96.png'">
+            </div>
+            <div class="game-card-title-group">
+              <h3>Knife Throw</h3>
+              <span class="game-tag" style="background:#fffbeb; color:#b45309;">Reflex & Precision</span>
+            </div>
+          </div>
+          <p class="game-card-desc">
+            Test your timing and pinpoint precision. Embed rotating blades into revolving targets without striking already placed knives to progress through boss stages.
+          </p>
+          <div class="game-card-footer">
+            <span>🗡️ Precision & Bosses</span>
+            <a href="https://rushbox.in" target="_blank" rel="noopener">Play &rarr;</a>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- Core Platform Features -->
-    <section class="section">
-      <div class="section-header">
+    <!-- Platform Innovations & Features -->
+    <section class="section" id="features">
+      <div class="section-head">
+        <span class="section-badge">Architecture</span>
         <h2 class="section-title">Core Platform Innovations</h2>
-        <p class="section-subtitle">Designed for speed, fairness, and privacy</p>
+        <p class="section-subtitle">Engineered for lightning performance, zero bloat, and fairness.</p>
       </div>
+
       <div class="features-grid">
-
         <div class="feature-card">
-          <div class="feature-icon">☁️</div>
-          <strong>Cloud Sync & Cross-Device Play</strong>
-          <span>Save your unlocked levels, high scores, and stars to the cloud and switch between mobile and web without losing a single beat.</span>
+          <div class="feature-icon-box">☁️</div>
+          <strong>Cloud Sync & Cross-Device</strong>
+          <p>Play on your PC browser during the day and seamlessly resume on your Android phone or Pi Browser without losing level stars or scores.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">⭐</div>
+          <div class="feature-icon-box">⭐</div>
           <strong>Global Gamer Level & XP (1–100)</strong>
-          <span>Earn +10 XP for every active minute of gameplay across any game to level up your gamer profile and unlock achievements.</span>
+          <p>Every active minute of gameplay earns +10 XP across any title, continuously unlocking gamer profile upgrades, badges, and avatars.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">🪙</div>
-          <strong>Global RB Points Meta-Economy</strong>
-          <span>Earn RB Points through daily claims and achievements to convert into in-game coins or unlock future entitlements.</span>
+          <div class="feature-icon-box">🪙</div>
+          <strong>RB Points Meta-Economy</strong>
+          <p>Earn daily rewards and milestone achievements to trade for in-game perks, bonus boosters, and upcoming platform entitlements.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <strong>60 FPS Native Performance</strong>
-          <span>Built with lightweight, optimized engines, custom synthesized audio, and tactile haptic feedback.</span>
+          <div class="feature-icon-box">⚡</div>
+          <strong>60+ FPS Native Rendering</strong>
+          <p>Optimized 2D canvas and Flame game loops guarantee fluid 60+ FPS response, zero input lag, and ultra-lightweight asset footprints.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
+          <div class="feature-icon-box">🛡️</div>
           <strong>Privacy-First & Family Safe</strong>
-          <span>Enjoy full gameplay in Guest mode with zero forced signups, no intrusive trackers, and COPPA compliance.</span>
+          <p>Instant Guest Mode by default with zero required signups, zero invasive ad trackers, and full compliance with COPPA child privacy standards.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">📴</div>
-          <strong>Complete Offline Mode</strong>
-          <span>Play anytime, anywhere without requiring an active internet connection on supported mobile games.</span>
+          <div class="feature-icon-box">📴</div>
+          <strong>Complete Offline Support</strong>
+          <p>Install on Android or as a PWA on Web to play your favorite puzzle and arcade titles anywhere, even without an active internet connection.</p>
         </div>
-
       </div>
     </section>
 
     <!-- Dedicated Pi Browser Integration Card -->
-    <section class="pi-banner">
-      <div class="pi-banner-content">
-        <h3>🟣 Pi Network Community Hub</h3>
+    <section class="pi-hub-card">
+      <div class="pi-hub-info">
+        <h3>🟣 Pi Network Community Integration</h3>
         <p>
-          Playing on the Pi Network? Rush Box supports direct Pi Browser integration with seamless Pi UID authentication and RB Points synchronization at <strong>pi.rushbox.in</strong>.
+          Playing from the Pi Network? Rush Box supports direct Pi Browser authentication, Pioneer avatar integration, and seamless RB Points cloud sync at <strong>pi.rushbox.in</strong>.
         </p>
       </div>
-      <div class="pi-btn-group">
-        <button type="button" class="cta-btn play-pi" onclick="openPiBrowserHandler()">
+      <div>
+        <button type="button" class="btn-pi" onclick="openPiBrowserHandler()">
           Open / Copy Pi Link
         </button>
       </div>
     </section>
   </main>
 
-  <!-- Footer Navigation Links -->
-  <footer class="footer">
-    <div class="footer-logo-row">
+  <!-- Clean Professional Footer -->
+  <footer class="site-footer">
+    <div class="footer-brand">
       <img src="/assets/logo.png" alt="Rush Box Logo" onerror="this.src='/favicon/favicon-96x96.png'">
       <span>Rush Box</span>
     </div>
@@ -1083,12 +390,12 @@ h1{
       <a href="/privacy" class="footer-link">🔒 Privacy Policy</a>
       <a href="/terms" class="footer-link">📜 Terms of Service</a>
       <a href="/child-policy" class="footer-link">🧒 Child Privacy Policy</a>
-      <a href="/delete-account" class="footer-link" style="color:#dc2626;">🗑️ Delete Account</a>
+      <a href="/delete-account" class="footer-link danger">🗑️ Delete Account</a>
     </div>
 
-    <div class="footer-copy">
-      <p>Developer: <strong>Aditya</strong> • Email: <a href="mailto:contact@connectpi.in" style="color:var(--accent);text-decoration:none;font-weight:700;">contact@connectpi.in</a></p>
-      <p style="margin-top:6px;">&copy; 2026 Rush Box • Play a little. Play again.</p>
+    <div class="footer-bottom">
+      <p>Developer: <strong>Aditya</strong> • Email: <a href="mailto:contact@connectpi.in">contact@connectpi.in</a></p>
+      <p style="margin-top: 6px;">&copy; 2026 Rush Box • Play a little. Play again.</p>
     </div>
   </footer>
 
@@ -1101,7 +408,7 @@ h1{
     <div class="modal-icon">π</div>
     <h3>Open in Pi Browser</h3>
     <p>
-      Rush Box is available for Pi Network Pioneers. You can launch it using the Pi custom schema or copy the link to paste into Pi Browser:
+      Rush Box is available for Pi Network Pioneers. Launch directly using the Pi schema or copy the link to paste into Pi Browser:
     </p>
 
     <!-- Copy URL Box -->
@@ -1113,9 +420,9 @@ h1{
     <!-- Instruction Steps -->
     <div class="steps-list">
       <ol>
-        <li>Open the <strong>Pi Browser</strong> app on your device.</li>
-        <li>Paste <strong>pi.rushbox.in</strong> into the top address bar.</li>
-        <li>Enjoy Rush Box with Pi Network verification!</li>
+        <li>Open the <strong>Pi Browser</strong> app on your mobile device.</li>
+        <li>Paste <strong>pi.rushbox.in</strong> into the top URL bar.</li>
+        <li>Enjoy Rush Box with verified Pi Network session sync!</li>
       </ol>
     </div>
 
@@ -1132,145 +439,116 @@ h1{
   <span id="toastMsg">Link copied to clipboard!</span>
 </div>
 
-<!-- Interactive Scripts for Pi Link & 3D Carousel Showcase -->
+<!-- Interactive Client Scripts -->
 <script>
-/* ============================================================
-   3D CENTER-STAGE LOOPING SHOWCASE CAROUSEL
-   ============================================================ */
-let currentSlide = 0;
-const totalSlides = 4;
-let autoSlideTimer = null;
-let progressTimer = null;
-let progressStartTime = 0;
-const slideDuration = 3800; // 3.8s per slide
-let isHovered = false;
+// Showcase Data
+const showcaseData = [
+  {
+    title: "Rush Box Game Library",
+    desc: "Unified lightweight arcade launcher with 60+ FPS native rendering, instant game switching, and cross-platform cloud sync.",
+    img: "/assets/01.png",
+    features: [
+      "Instant play without cumbersome installations",
+      "Shared global XP progression (Levels 1 to 100)",
+      "RB Points meta-economy with daily streak rewards"
+    ]
+  },
+  {
+    title: "Rush Rope Physics Adventure",
+    desc: "Cut ropes at the right moment, navigate obstacles, collect 3 stars, and feed candy to Chomp across challenging chapters.",
+    img: "/assets/games/rush_rope.webp",
+    features: [
+      "True rope and candy gravity physics engine",
+      "Multi-chapter star progression",
+      "Relaxing, highly tactile slicing mechanics"
+    ]
+  },
+  {
+    title: "Fruit Slice Katana Runes",
+    desc: "Slice flying fruits, trigger devastating multi-blade combos, dodge explosives, and test your speed in Timed & Timeless Rush modes.",
+    img: "/assets/04.png",
+    features: [
+      "High-velocity blade slashing physics",
+      "Katana Runes unlockable blade skins",
+      "Combo multipliers and frenzy fever moments"
+    ]
+  },
+  {
+    title: "Arrow Tap Out Trail",
+    desc: "A spatial 3D puzzle challenge. Tap arrows to untangle intricate multi-directional boards across themed chapters with special tiles.",
+    img: "/assets/03.png",
+    features: [
+      "Clean 3D spatial thinking puzzles",
+      "Arrow Escape V2 chapter hubs",
+      "Undo moves, rotate board, and hint power-ups"
+    ]
+  },
+  {
+    title: "Tic Tac Toe AI Arena",
+    desc: "Classic 3x3 and tactical 4x4 boards. Play against intelligent AI across three difficulty tiers or battle friends in timed local PvP.",
+    img: "/assets/02.png",
+    features: [
+      "3-tier smart AI (Easy, Medium, Master)",
+      "Extended 4x4 4-in-a-row tactical grid",
+      "Local pass-and-play 2-player multiplayer"
+    ]
+  }
+];
 
-function updateCarousel() {
-  const slides = document.querySelectorAll('.carousel-slide');
-  const dots = document.querySelectorAll('.carousel-dot');
+let activeShowcaseIdx = 0;
+let showcaseTimer = null;
 
-  slides.forEach((slide) => {
-    const idx = parseInt(slide.getAttribute('data-index'), 10);
-    slide.classList.remove('active', 'prev', 'next', 'hidden');
+function selectShowcase(index) {
+  activeShowcaseIdx = index;
+  const data = showcaseData[index];
 
-    if (idx === currentSlide) {
-      slide.classList.add('active');
-    } else if (idx === (currentSlide - 1 + totalSlides) % totalSlides) {
-      slide.classList.add('prev');
-    } else if (idx === (currentSlide + 1) % totalSlides) {
-      slide.classList.add('next');
-    } else {
-      slide.classList.add('hidden');
-    }
+  // Update tabs
+  const tabs = document.querySelectorAll('#showcaseTabs .tab-btn');
+  tabs.forEach((tab, i) => {
+    tab.classList.toggle('active', i === index);
   });
 
-  dots.forEach((dot, idx) => {
-    dot.classList.toggle('active', idx === currentSlide);
-  });
+  // Update details with subtle transition
+  const titleEl = document.getElementById('showcaseTitle');
+  const descEl = document.getElementById('showcaseDesc');
+  const imgEl = document.getElementById('showcaseImage');
+  const listEl = document.getElementById('showcaseList');
 
-  resetProgressBar();
-}
+  if (titleEl) titleEl.textContent = data.title;
+  if (descEl) descEl.textContent = data.desc;
+  if (imgEl) {
+    imgEl.style.opacity = '0.5';
+    imgEl.src = data.img;
+    imgEl.onload = () => { imgEl.style.opacity = '1'; };
+  }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  updateCarousel();
-}
-
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  updateCarousel();
-}
-
-function goToSlide(idx) {
-  if (idx !== currentSlide) {
-    currentSlide = idx;
-    updateCarousel();
+  if (listEl) {
+    listEl.innerHTML = data.features.map(f => `<li>${f}</li>`).join('');
   }
 }
 
-function handleSlideClick(idx) {
-  if (idx !== currentSlide) {
-    goToSlide(idx);
-  }
+// Auto-advance showcase every 5 seconds if user is idle
+function startShowcaseTimer() {
+  if (showcaseTimer) clearInterval(showcaseTimer);
+  showcaseTimer = setInterval(() => {
+    activeShowcaseIdx = (activeShowcaseIdx + 1) % showcaseData.length;
+    selectShowcase(activeShowcaseIdx);
+  }, 5000);
 }
 
-function resetProgressBar() {
-  progressStartTime = Date.now();
-  const bar = document.getElementById('carouselProgressBar');
-  if (bar) bar.style.width = '0%';
+// Pause on mouseenter
+const showcaseWrapper = document.querySelector('.showcase-wrapper');
+if (showcaseWrapper) {
+  showcaseWrapper.addEventListener('mouseenter', () => clearInterval(showcaseTimer));
+  showcaseWrapper.addEventListener('mouseleave', startShowcaseTimer);
 }
 
-function startAutoSlide() {
-  stopAutoSlide();
-  progressStartTime = Date.now();
-
-  progressTimer = setInterval(() => {
-    if (isHovered) return;
-    const elapsed = Date.now() - progressStartTime;
-    const pct = Math.min(100, (elapsed / slideDuration) * 100);
-    const bar = document.getElementById('carouselProgressBar');
-    if (bar) bar.style.width = pct + '%';
-  }, 40);
-
-  autoSlideTimer = setInterval(() => {
-    if (!isHovered) {
-      nextSlide();
-    }
-  }, slideDuration);
-}
-
-function stopAutoSlide() {
-  if (autoSlideTimer) clearInterval(autoSlideTimer);
-  if (progressTimer) clearInterval(progressTimer);
-  const bar = document.getElementById('carouselProgressBar');
-  if (bar) bar.style.width = '0%';
-}
-
-// Touch gesture / swipe handling
-const carouselElem = document.getElementById('showcaseCarousel');
-if (carouselElem) {
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  carouselElem.addEventListener('touchstart', (e) => {
-    isHovered = true;
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  carouselElem.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    const diff = touchEndX - touchStartX;
-    if (diff > 45) {
-      prevSlide();
-    } else if (diff < -45) {
-      nextSlide();
-    }
-    isHovered = false;
-    resetProgressBar();
-  }, { passive: true });
-
-  carouselElem.addEventListener('mouseenter', () => { isHovered = true; });
-  carouselElem.addEventListener('mouseleave', () => { isHovered = false; progressStartTime = Date.now(); });
-}
-
-// Initialize on load
-document.addEventListener('DOMContentLoaded', () => {
-  updateCarousel();
-  startAutoSlide();
-});
-
-/* ============================================================
-   PI BROWSER & GENERAL APP SCRIPTS
-   ============================================================ */
+// Pi Browser Modal Controls
 function openPiBrowserHandler() {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  
-  // Attempt to trigger schema on mobile devices
   if (isMobile) {
     window.location.href = 'pi://pi.rushbox.in';
   }
-  
-  // Always display instructions modal with copy link
   openPiModal();
 }
 
@@ -1293,9 +571,7 @@ function copyPiLink() {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(url).then(() => {
       showToast('Copied pi.rushbox.in! Paste it in Pi Browser.');
-    }).catch(() => {
-      fallbackCopy(url);
-    });
+    }).catch(() => fallbackCopy(url));
   } else {
     fallbackCopy(url);
   }
@@ -1320,24 +596,22 @@ function showToast(msg) {
   const toastMsg = document.getElementById('toastMsg');
   toastMsg.textContent = msg;
   toast.classList.add('show');
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 3500);
+  setTimeout(() => { toast.classList.remove('show'); }, 3200);
 }
 
 function trackPiLaunch() {
   showToast('Launching Pi Browser...');
 }
 
-// Keyboard controls
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closePiModal();
-  } else if (e.key === 'ArrowLeft') {
-    prevSlide();
-  } else if (e.key === 'ArrowRight') {
-    nextSlide();
-  }
+// Keyboard ESC to close modal
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closePiModal();
+});
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+  selectShowcase(0);
+  startShowcaseTimer();
 });
 </script>
 
