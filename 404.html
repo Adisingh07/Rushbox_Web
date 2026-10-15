@@ -9,42 +9,44 @@
 <link rel="manifest" href="/favicon/site.webmanifest">
 <meta name="theme-color" content="#0284c7">
 
-<!-- Primary SEO & Share Meta -->
-<title id="pageTitle">Rush Box — Opening App & Play</title>
-<meta name="description" content="Play Fruit Slice, Rush Rope, Arrow Tap Out, and join squad farming for huge multipliers! Open in the Rush Box App or play on Web.">
+<!-- SEO & Preview Meta -->
+<title id="pageTitle">Rush Box — Launch App & Play</title>
+<meta name="description" content="Play instant arcade games, join team farming squads, and claim referral bonuses on Rush Box.">
 <meta name="robots" content="noindex, follow">
 
-<!-- Open Graph / WhatsApp / Telegram / Facebook Preview -->
+<!-- Open Graph / WhatsApp / Telegram Preview Cards -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rush Box">
 <meta property="og:url" content="https://app.rushbox.in/">
 <meta property="og:title" content="Rush Box — Arcade & Casual Gaming Hub">
-<meta property="og:description" content="Play instant arcade games, claim referral bonuses, and join squad farming for massive team multipliers! Open in Rush Box or play on Web.">
+<meta property="og:description" content="Play instant arcade games, join team farming squads, and claim bonuses on Rush Box. Open in app or play on web.">
 <meta property="og:image" content="https://rushbox.in/assets/logo.png">
 <meta property="og:image:secure_url" content="https://rushbox.in/assets/logo.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
-<meta property="og:image:alt" content="Rush Box Logo">
+<meta property="og:image:alt" content="Rush Box">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@RushBoxApp">
 <meta name="twitter:title" content="Rush Box — Arcade & Casual Gaming Hub">
-<meta name="twitter:description" content="Play instant arcade games, claim referral bonuses, and join squad farming for massive team multipliers!">
+<meta name="twitter:description" content="Play instant arcade games, join farming squads, and claim rewards on Rush Box.">
 <meta name="twitter:image" content="https://rushbox.in/assets/logo.png">
 
-<!-- Shared Modern Stylesheet -->
+<!-- Google Fonts & Shared Stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/main.css">
 </head>
 <body>
 
 <div class="page-container">
 
-  <!-- Header Navigation Bar -->
+  <!-- Header Navigation -->
   <header class="site-header">
     <nav class="nav-bar">
-      <a href="/" class="brand-link">
+      <a href="/" class="brand-link" aria-label="Rush Box Home">
         <div class="brand-icon">
           <img src="/assets/logo.png" alt="Rush Box Logo" onerror="this.src='/favicon/favicon-96x96.png'">
         </div>
@@ -59,274 +61,235 @@
         <a href="/#games" class="nav-link">Games</a>
         <a href="/about" class="nav-link">About</a>
         <a href="https://rushbox.in" target="_blank" rel="noopener" class="nav-cta">
-          <span>Play Web</span>
-          <span class="nav-cta-arrow">→</span>
+          Play Web &rarr;
         </a>
       </div>
     </nav>
   </header>
 
-  <!-- Deep Link & Redirect Card -->
-  <main class="redirect-wrapper">
-    <div class="redirect-card">
-
-      <!-- Animated Icon Spinner -->
-      <div class="redirect-icon-wrapper">
-        <div class="redirect-spinner-ring" id="spinnerRing"></div>
-        <img src="/assets/logo.png" alt="Rush Box App" class="redirect-icon" onerror="this.src='/favicon/favicon-96x96.png'">
+  <main>
+    <!-- Main Redirection Hero Section -->
+    <section class="redirect-hero">
+      <img src="/assets/logo.png" alt="Rush Box" class="redirect-app-logo" onerror="this.src='/favicon/favicon-96x96.png'">
+      
+      <!-- Context Badge (Squad code / Referral code) -->
+      <div id="contextBadge" class="badge" style="display: none;">
+        <span id="contextBadgeText">Invite</span>
       </div>
 
-      <!-- Optional Invite/Referral Badge -->
-      <div id="inviteBadge" class="invite-badge" style="display: none;">
-        <span id="inviteBadgeIcon">🎁</span>
-        <span id="inviteBadgeText">Referral Invite</span>
+      <h1 id="heroTitle">Launch Rush Box</h1>
+      <p class="subtitle" id="heroSubtitle">Small games. Smooth moments. Instant arcade gaming on Android and Web.</p>
+
+      <!-- Status Strip (Active loading indicator) -->
+      <div id="statusStrip" class="redirect-status-strip">
+        <span class="redirect-status-text" id="statusText">
+          <span>🚀</span>
+          <span id="statusLabel">Opening Rush Box app...</span>
+        </span>
+        <div class="redirect-progress-bar" id="progressBar"></div>
       </div>
 
-      <!-- Main Headline & Subtitle -->
-      <h1 class="redirect-title" id="redirectTitle">Opening Rush Box App...</h1>
-      <p class="redirect-desc" id="redirectDesc">
-        Attempting to launch the native Rush Box app on your device to take you directly to this squad, reward, or game.
-      </p>
-
-      <!-- URL Preview Box -->
-      <div class="url-target-box">
-        <span class="url-target-text" id="targetUrlText">rushbox://</span>
-        <button type="button" class="url-copy-btn" id="copyUrlBtn">Copy Link</button>
+      <!-- Error Notice (Appears only if open or download encounters an error) -->
+      <div id="errorNotice" class="redirect-error-alert" style="display: none;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span id="errorNoticeText">Rush Box is not installed on this device.</span>
       </div>
 
-      <!-- Primary Action Buttons -->
-      <div class="redirect-actions">
-        <!-- 1. Open in App -->
-        <button type="button" id="btnOpenApp" class="btn-open-app">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
-          <span>Open in Rush Box App</span>
-        </button>
-
-        <!-- 2. Download from Google Play -->
-        <a id="btnPlayStore" class="btn-playstore-card" href="https://play.google.com/store/apps/details?id=com.connectpi.bladerush" target="_blank" rel="noopener">
-          <img src="/assets/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play">
+      <!-- Action Buttons Row -->
+      <div class="redirect-actions-row">
+        <!-- Google Play Button -->
+        <a id="btnPlayStore" class="btn-playstore-cta" href="https://play.google.com/store/apps/details?id=com.connectpi.bladerush" target="_blank" rel="noopener">
+          <img src="/assets/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Google Play">
           <span>Get it on Google Play</span>
         </a>
 
-        <!-- 3. Continue on Web -->
-        <a id="btnWebFallback" class="btn btn-ghost" href="https://rushbox.in" style="width: 100%;">
-          🌐 Continue Playing on Web
+        <!-- Open App Button -->
+        <button type="button" id="btnOpenApp" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>Open Rush Box App</span>
+        </button>
+
+        <!-- Web Play Button -->
+        <a id="btnWebPlay" class="btn btn-secondary" href="https://rushbox.in" target="_blank" rel="noopener">
+          <span>Play on Web (rushbox.in)</span>
         </a>
       </div>
+    </section>
 
-      <!-- Status Indicator / Auto-redirect Countdown -->
-      <div id="statusNotice" style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
-        <span id="statusNoticeText">Redirecting to app...</span>
+    <!-- Platform Highlights Section (Responsive 3-Column Grid) -->
+    <section class="redirect-features">
+      <h2 class="redirect-features-title">Everything In One Box</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Arcade Games</h3>
+          <p>Fruit Slice, Rush Rope, Arrow Tap Out, Snake Rush, and Tic Tac Toe with zero wait times and responsive 60+ FPS physics.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>Squad Farming Multipliers</h3>
+          <p>Team up with friends, enter squad codes, and activate collective boosts to multiply your daily rewards.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3>Cross-Platform Cloud Sync</h3>
+          <p>Play seamlessly across our native Android mobile app or straight from your browser on rushbox.in with cloud saves.</p>
+        </div>
       </div>
-
-      <!-- Secondary Quick Links -->
-      <div class="redirect-secondary-links">
-        <a href="/">Home</a>
-        <span>•</span>
-        <a href="/about">About</a>
-        <span>•</span>
-        <a href="/privacy">Privacy</a>
-        <span>•</span>
-        <a href="/terms">Terms</a>
-      </div>
-
-    </div>
+    </section>
   </main>
 
   <!-- Site Footer -->
   <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="/assets/logo.png" alt="Rush Box Logo" onerror="this.src='/favicon/favicon-96x96.png'">
+      <span>Rush Box</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="/" class="footer-link">Home</a>
+      <a href="/#games" class="footer-link">Games</a>
+      <a href="/about" class="footer-link">About</a>
+      <a href="/privacy" class="footer-link">Privacy Policy</a>
+      <a href="/terms" class="footer-link">Terms of Service</a>
+      <a href="/child-policy" class="footer-link">Child Privacy</a>
+      <a href="/delete-account" class="footer-link danger">Delete Account</a>
+    </div>
+
     <div class="footer-bottom">
-      <p>© 2026 Rush Box by ConnectPi Technologies LLP. All rights reserved.</p>
+      <p>&copy; 2026 <strong>Rush Box</strong> by ConnectPi Technologies LLP. All rights reserved.</p>
+      <p style="margin-top:6px;">Play a little. Play again. • <a href="https://rushbox.in" target="_blank" rel="noopener">rushbox.in</a></p>
     </div>
   </footer>
 
 </div>
 
-<!-- Floating Toast -->
-<div class="toast" id="toast">
-  <span>Link copied to clipboard!</span>
-</div>
-
-<!-- Deep Link & Fallback Automation Script -->
 <script>
 (function() {
   'use strict';
 
-  // 1. URL Anatomy
+  // 1. Capture Full Location (Path, Query, Hash)
   var pathname = window.location.pathname || '';
   var search = window.location.search || '';
   var hash = window.location.hash || '';
-
-  // Extract relative path (stripping leading slash)
   var cleanPath = pathname.replace(/^\/+/, '');
   var fullRelativePath = cleanPath + search + hash;
 
   // Query Params Extraction
-  var urlParams = new URLSearchParams(search);
-  var code = urlParams.get('code') || urlParams.get('ref') || urlParams.get('referral');
-  var token = urlParams.get('token');
+  var params = new URLSearchParams(search);
+  var code = params.get('code') || params.get('ref') || params.get('referral');
+  var token = params.get('token');
 
-  // Package & Deep Link Constants
+  // App & Store Constants
   var PACKAGE_NAME = 'com.connectpi.bladerush';
   var PLAY_STORE_BASE = 'https://play.google.com/store/apps/details?id=' + PACKAGE_NAME;
-  var playStoreUrl = code
+  var playStoreUrl = code 
     ? PLAY_STORE_BASE + '&referrer=ref_code%3D' + encodeURIComponent(code)
     : PLAY_STORE_BASE;
 
-  // Custom Schemes
-  // Standard Android Intent syntax preserves full path, query, and hash
+  // Schemes
   var androidIntentUrl = 'intent://' + fullRelativePath + '#Intent;scheme=rushbox;package=' + PACKAGE_NAME + ';S.browser_fallback_url=' + encodeURIComponent(playStoreUrl) + ';end;';
   var customSchemeUrl = 'rushbox://' + fullRelativePath;
-  var webPortalUrl = 'https://rushbox.in' + pathname + search + hash;
+  var webUrl = 'https://rushbox.in' + pathname + search + hash;
 
   // DOM Elements
-  var redirectTitle = document.getElementById('redirectTitle');
-  var redirectDesc = document.getElementById('redirectDesc');
-  var inviteBadge = document.getElementById('inviteBadge');
-  var inviteBadgeIcon = document.getElementById('inviteBadgeIcon');
-  var inviteBadgeText = document.getElementById('inviteBadgeText');
-  var targetUrlText = document.getElementById('targetUrlText');
-  var copyUrlBtn = document.getElementById('copyUrlBtn');
-  var btnOpenApp = document.getElementById('btnOpenApp');
+  var contextBadge = document.getElementById('contextBadge');
+  var contextBadgeText = document.getElementById('contextBadgeText');
+  var heroTitle = document.getElementById('heroTitle');
+  var heroSubtitle = document.getElementById('heroSubtitle');
+  var statusStrip = document.getElementById('statusStrip');
+  var statusLabel = document.getElementById('statusLabel');
+  var progressBar = document.getElementById('progressBar');
+  var errorNotice = document.getElementById('errorNotice');
+  var errorNoticeText = document.getElementById('errorNoticeText');
   var btnPlayStore = document.getElementById('btnPlayStore');
-  var btnWebFallback = document.getElementById('btnWebFallback');
-  var statusNoticeText = document.getElementById('statusNoticeText');
-  var spinnerRing = document.getElementById('spinnerRing');
-  var toast = document.getElementById('toast');
+  var btnOpenApp = document.getElementById('btnOpenApp');
+  var btnWebPlay = document.getElementById('btnWebPlay');
 
-  // Set Play Store link href
-  if (btnPlayStore) {
-    btnPlayStore.href = playStoreUrl;
-  }
+  // Set URLs
+  if (btnPlayStore) btnPlayStore.href = playStoreUrl;
+  if (btnWebPlay) btnWebPlay.href = webUrl;
 
-  // Set Web fallback link href
-  if (btnWebFallback) {
-    btnWebFallback.href = webPortalUrl;
-  }
-
-  // Display URL in target box
-  if (targetUrlText) {
-    targetUrlText.textContent = window.location.host + pathname + search + hash;
-  }
-
-  // 2. Customize Card UI according to the route / parameter
-  var isFarmingTeam = pathname.indexOf('/farming/team') !== -1 || pathname.indexOf('/team') !== -1;
-  var isFarmingReferral = pathname.indexOf('/farming/referral') !== -1 || pathname.indexOf('/referral') !== -1 || (code && code.length > 0);
+  // 2. Route Context Personalization
+  var isTeamRoute = pathname.indexOf('/farming/team') !== -1 || pathname.indexOf('/team') !== -1;
+  var isReferralRoute = pathname.indexOf('/farming/referral') !== -1 || pathname.indexOf('/referral') !== -1 || (code && code.length > 0);
   var isCpFarming = pathname.indexOf('/cp-farming') !== -1 || (token && token.length > 0);
-  var isGameRoute = pathname.indexOf('/game/') !== -1;
 
-  if (isFarmingTeam) {
+  if (isTeamRoute) {
     document.title = 'Rush Box — Join Squad & Earn Multipliers';
-    redirectTitle.textContent = 'Joining Squad Team...';
-    redirectDesc.textContent = 'Opening the Rush Box app so you can join your team squad and activate collective farming boosts.';
-    if (inviteBadge && code) {
-      inviteBadge.style.display = 'inline-flex';
-      inviteBadgeIcon.textContent = '👥';
-      inviteBadgeText.textContent = 'Squad Code: ' + code;
+    heroTitle.textContent = 'Join Farming Squad';
+    heroSubtitle.textContent = 'Team up with your squad in Rush Box to activate collective farm boosts.';
+    if (contextBadge && code) {
+      contextBadge.style.display = 'inline-block';
+      contextBadgeText.textContent = '👥 Squad Code: ' + code;
     }
-  } else if (isFarmingReferral) {
+  } else if (isReferralRoute) {
     document.title = 'Rush Box — Claim Referral Bonus';
-    redirectTitle.textContent = 'Claiming Referral Bonus...';
-    redirectDesc.textContent = 'Opening Rush Box to apply referral code ' + (code ? '"' + code + '"' : '') + ' for an instant +10% farm boost.';
-    if (inviteBadge && code) {
-      inviteBadge.style.display = 'inline-flex';
-      inviteBadgeIcon.textContent = '🎁';
-      inviteBadgeText.textContent = 'Referral Code: ' + code;
+    heroTitle.textContent = 'Claim Referral Bonus';
+    heroSubtitle.textContent = 'Apply referral code for an instant +10% farm boost across all games.';
+    if (contextBadge && code) {
+      contextBadge.style.display = 'inline-block';
+      contextBadgeText.textContent = '🎁 Referral Code: ' + code;
     }
   } else if (isCpFarming) {
     document.title = 'Rush Box — Partner Farming';
-    redirectTitle.textContent = 'Launching Partner Farming...';
-    redirectDesc.textContent = 'Connecting your farming token to start earning RB points in Rush Box.';
-    if (inviteBadge) {
-      inviteBadge.style.display = 'inline-flex';
-      inviteBadgeIcon.textContent = '⚡';
-      inviteBadgeText.textContent = 'Partner Farming Link';
+    heroTitle.textContent = 'Partner Farming';
+    heroSubtitle.textContent = 'Connect your farming token to start earning RB points in Rush Box.';
+    if (contextBadge) {
+      contextBadge.style.display = 'inline-block';
+      contextBadgeText.textContent = '⚡ Partner Farming Token';
     }
-  } else if (isGameRoute) {
-    var gameName = cleanPath.split('/')[1] || 'Arcade';
-    document.title = 'Rush Box — Launching ' + gameName;
-    redirectTitle.textContent = 'Launching Game...';
-    redirectDesc.textContent = 'Taking you straight to ' + gameName + ' inside the Rush Box app.';
-  } else if (cleanPath === '' || cleanPath === '404' || cleanPath === '404.html') {
-    // Plain 404
-    redirectTitle.textContent = 'Welcome to Rush Box';
-    redirectDesc.textContent = 'Open the Rush Box app on your device or download it from Google Play to play arcade games and earn rewards.';
   }
 
-  // 3. Device & Environment Detection
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera || '';
+  // 3. Device Detection
+  var userAgent = navigator.userAgent || '';
   var isAndroid = /android/i.test(userAgent);
   var isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
   var isMobile = isAndroid || isIOS;
 
-  // 4. Deep Link Execution Handler
-  function attemptOpenApp() {
-    statusNoticeText.textContent = 'Attempting to launch Rush Box app...';
+  function showError(msg) {
+    if (!errorNotice || !errorNoticeText) return;
+    errorNoticeText.textContent = msg;
+    errorNotice.style.display = 'flex';
+  }
 
-    if (isAndroid) {
-      // Android Chrome intent is the gold standard:
-      // If installed -> opens app
-      // If not installed -> automatically launches S.browser_fallback_url (Play Store)
-      window.location.href = androidIntentUrl;
-    } else {
-      // Direct custom scheme for iOS / other platforms
-      window.location.href = customSchemeUrl;
+  function hideError() {
+    if (errorNotice) errorNotice.style.display = 'none';
+  }
+
+  // 4. Trigger Deep Link
+  var appLaunched = false;
+
+  function triggerOpen() {
+    hideError();
+    try {
+      if (isAndroid) {
+        window.location.href = androidIntentUrl;
+      } else {
+        window.location.href = customSchemeUrl;
+      }
+    } catch (err) {
+      showError('Unable to open the app automatically. Please download from Google Play.');
     }
   }
 
-  // Wire up "Open in App" button
-  if (btnOpenApp) {
-    btnOpenApp.addEventListener('click', function(e) {
-      e.preventDefault();
-      attemptOpenApp();
-    });
-  }
-
-  // 5. Play Store button click tracking & confirmation
-  if (btnPlayStore) {
-    btnPlayStore.addEventListener('click', function() {
-      statusNoticeText.textContent = 'Opening Google Play Store...';
-    });
-  }
-
-  // 6. Copy URL Button Handler
-  if (copyUrlBtn) {
-    copyUrlBtn.addEventListener('click', function() {
-      var urlToCopy = window.location.href;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(urlToCopy).then(showToast);
-      } else {
-        // Fallback
-        var tempInput = document.createElement('input');
-        tempInput.value = urlToCopy;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
-        showToast();
-      }
-    });
-  }
-
-  function showToast() {
-    if (!toast) return;
-    toast.classList.add('show');
-    setTimeout(function() {
-      toast.classList.remove('show');
-    }, 2800);
-  }
-
-  // 7. Auto-Launch Cascade on Mobile
-  var appLaunched = false;
-
-  // Detect when user switches away to app
+  // Detect when user switches away to native app
   document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
       appLaunched = true;
-      if (spinnerRing) spinnerRing.style.display = 'none';
-      statusNoticeText.textContent = 'Rush Box app launched!';
+      if (statusStrip) statusStrip.style.display = 'none';
+      if (btnOpenApp) {
+        btnOpenApp.classList.remove('btn-loading');
+        btnOpenApp.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg><span>Open Rush Box App</span>';
+      }
     }
   });
 
@@ -334,41 +297,74 @@
     appLaunched = true;
   });
 
-  // Only auto-trigger if on mobile and cleanPath is not empty
-  if (isMobile && cleanPath !== '' && cleanPath !== '404' && cleanPath !== '404.html') {
-    // Slight delay so the user sees the branded card before the OS intent dialog fires
-    setTimeout(function() {
-      if (!appLaunched) {
-        attemptOpenApp();
-      }
-    }, 400);
+  // 5. Initial Page Load (Shows Loading on ALL devices)
+  (function initLoad() {
+    if (statusStrip) statusStrip.style.display = 'inline-flex';
+    if (progressBar) progressBar.style.display = 'block';
+    if (statusLabel) {
+      statusLabel.innerHTML = '<span class="spinner-ring-blue"></span> <span>Opening Rush Box app...</span>';
+    }
 
-    // After 3.5 seconds, if the page is still visible in browser,
-    // the app is likely not installed. Update UI gracefully.
+    // Attempt launch on mobile
+    if (isMobile && cleanPath !== '' && cleanPath !== '404' && cleanPath !== '404.html') {
+      triggerOpen();
+    }
+
+    // After 2.8 seconds, if still visible, show guidance
     setTimeout(function() {
       if (!appLaunched && !document.hidden) {
-        if (spinnerRing) {
-          spinnerRing.style.animation = 'none';
-          spinnerRing.style.opacity = '0.3';
-        }
-        redirectTitle.textContent = 'App Not Installed?';
-        redirectDesc.innerHTML = 'Rush Box was not detected on your device. <strong>Download Rush Box from Google Play</strong> to join your squad and claim rewards, or continue playing on Web.';
-        statusNoticeText.innerHTML = '👉 Tap <strong>"Get it on Google Play"</strong> below to download and install.';
-        
-        // Highlight Play Store CTA
-        if (btnPlayStore) {
-          btnPlayStore.style.boxShadow = '0 0 0 3px rgba(2, 132, 199, 0.4), 0 8px 24px rgba(0, 0, 0, 0.25)';
-          btnPlayStore.style.transform = 'scale(1.02)';
+        if (progressBar) progressBar.style.display = 'none';
+        if (statusLabel) {
+          statusLabel.innerHTML = '💡 App didn\'t open? Tap <strong>"Get it on Google Play"</strong> below.';
         }
       }
-    }, 3500);
-  } else {
-    // Desktop or Root fallback: keep spinner static
-    if (spinnerRing) {
-      spinnerRing.style.animation = 'none';
-      spinnerRing.style.opacity = '0.25';
-    }
-    statusNoticeText.textContent = 'Choose an option above to launch Rush Box.';
+    }, 2800);
+  })();
+
+  // 6. Manual Button Click Handlers (Visible Loading on Click)
+  var defaultBtnHtml = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg><span>Open Rush Box App</span>';
+
+  if (btnOpenApp) {
+    btnOpenApp.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Show immediate loading on button
+      btnOpenApp.classList.add('btn-loading');
+      btnOpenApp.innerHTML = '<span class="spinner-ring-small"></span><span>Launching App...</span>';
+
+      // Show active loading on status strip
+      if (statusStrip) statusStrip.style.display = 'inline-flex';
+      if (progressBar) progressBar.style.display = 'block';
+      if (statusLabel) {
+        statusLabel.innerHTML = '<span class="spinner-ring-blue"></span> <span>Connecting to Rush Box app...</span>';
+      }
+
+      hideError();
+      triggerOpen();
+
+      // After 2.2 seconds, if app did not open, reset button & display clear error
+      setTimeout(function() {
+        if (!document.hidden) {
+          btnOpenApp.classList.remove('btn-loading');
+          btnOpenApp.innerHTML = defaultBtnHtml;
+          if (progressBar) progressBar.style.display = 'none';
+          if (statusLabel) {
+            statusLabel.innerHTML = '👉 Tap <strong>"Get it on Google Play"</strong> below.';
+          }
+          showError("Rush Box app was not detected on this device. Please tap 'Get it on Google Play' to download.");
+        }
+      }, 2200);
+    });
+  }
+
+  if (btnPlayStore) {
+    btnPlayStore.addEventListener('click', function() {
+      hideError();
+      if (statusStrip) statusStrip.style.display = 'inline-flex';
+      if (statusLabel) {
+        statusLabel.innerHTML = '<span class="spinner-ring-blue"></span> <span>Opening Google Play Store...</span>';
+      }
+    });
   }
 
 })();

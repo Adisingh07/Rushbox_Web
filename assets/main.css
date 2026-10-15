@@ -1941,26 +1941,21 @@ ul.bullet-points li {
 }
 
 /* ==========================================================================
-   404 & Deep Link Redirection UI (app.rushbox.in)
+   Full Page Deep Link & Redirection Styles (app.rushbox.in / 404)
    ========================================================================== */
-.redirect-wrapper {
-  max-width: 540px;
-  margin: 36px auto 60px;
-  padding: 0 16px;
-}
-
-.redirect-card {
+.redirect-hero {
+  text-align: center;
+  padding: 48px 24px;
+  border-radius: var(--radius-xl);
   background: var(--surface);
   border: 1px solid var(--border-subtle);
-  border-radius: 24px;
-  padding: 40px 32px;
-  text-align: center;
-  box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 32px;
   position: relative;
   overflow: hidden;
 }
 
-.redirect-card::before {
+.redirect-hero::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1970,208 +1965,183 @@ ul.bullet-points li {
   background: var(--primary-gradient);
 }
 
-.redirect-icon-wrapper {
-  position: relative;
-  width: 92px;
-  height: 92px;
-  margin: 0 auto 20px;
-  display: grid;
-  place-items: center;
-}
-
-.redirect-icon {
-  width: 72px;
-  height: 72px;
-  border-radius: 20px;
+.redirect-app-logo {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 18px;
+  border-radius: 22px;
+  display: block;
   object-fit: cover;
-  box-shadow: 0 10px 24px rgba(2, 132, 199, 0.22);
+  box-shadow: 0 10px 24px rgba(2, 132, 199, 0.18);
 }
 
-.redirect-spinner-ring {
+.redirect-status-strip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+  margin: 16px auto 24px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.redirect-status-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.redirect-progress-bar {
+  width: 100%;
+  max-width: 220px;
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+}
+
+.redirect-progress-bar::after {
+  content: "";
   position: absolute;
-  inset: 0;
-  border: 3px solid rgba(2, 132, 199, 0.12);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 45%;
+  background: var(--primary);
+  border-radius: 99px;
+  animation: indeterminateProgress 1.3s infinite ease-in-out;
+}
+
+@keyframes indeterminateProgress {
+  0% { left: -45%; width: 30%; }
+  50% { left: 25%; width: 55%; }
+  100% { left: 100%; width: 40%; }
+}
+
+/* Spinners for Buttons and Status */
+.spinner-ring-small {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spinRing 0.75s linear infinite;
+  vertical-align: middle;
+}
+
+.spinner-ring-blue {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(2, 132, 199, 0.2);
   border-top-color: var(--primary);
   border-radius: 50%;
-  animation: redirectSpin 1s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+  animation: spinRing 0.75s linear infinite;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
-@keyframes redirectSpin {
+@keyframes spinRing {
   to { transform: rotate(360deg); }
 }
 
-.invite-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(147, 51, 234, 0.09);
-  border: 1px solid rgba(147, 51, 234, 0.22);
-  color: #7e22ce;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.btn-loading {
+  pointer-events: none;
+  opacity: 0.85;
 }
 
-.redirect-title {
-  margin: 0 0 8px;
-  font-size: clamp(22px, 4vw, 28px);
-  font-weight: 900;
-  color: var(--text-main);
-  letter-spacing: -0.5px;
-}
 
-.redirect-desc {
-  font-size: 14.5px;
-  color: var(--text-body);
-  line-height: 1.6;
-  margin: 0 0 20px;
-}
-
-.url-target-box {
-  background: var(--surface-subtle);
-  border: 1px dashed #cbd5e1;
+.redirect-error-alert {
+  max-width: 580px;
+  margin: 0 auto 24px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 14px 18px;
   border-radius: var(--radius-md);
-  padding: 10px 14px;
-  margin-bottom: 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 12px;
   text-align: left;
 }
 
-.url-target-text {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-main);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  flex: 1;
-}
-
-.url-copy-btn {
-  background: var(--surface);
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-sm);
-  padding: 5px 10px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--text-main);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.15s ease;
-}
-
-.url-copy-btn:hover {
-  background: var(--primary-light);
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.redirect-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 22px;
-}
-
-.btn-open-app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 14px 24px;
-  border-radius: var(--radius-md);
-  background: var(--primary-gradient);
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 15px;
-  text-decoration: none;
-  box-shadow: 0 4px 14px var(--primary-glow);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  border: none;
-  cursor: pointer;
-}
-
-.btn-open-app:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px var(--primary-glow);
-  color: #ffffff;
-}
-
-.btn-playstore-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  width: 100%;
-  padding: 12px 20px;
-  border-radius: var(--radius-md);
-  background: #0f172a;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
-  transition: all 0.2s ease;
-  border: 1px solid #1e293b;
-}
-
-.btn-playstore-card:hover {
-  background: #020617;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
-  color: #ffffff;
-}
-
-.btn-playstore-card img {
-  height: 26px;
-  width: auto;
-}
-
-.redirect-secondary-links {
+.redirect-actions-row {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
-  font-size: 13.5px;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-subtle);
-  padding-top: 20px;
+  gap: 12px;
+  margin: 20px auto 10px;
 }
 
-.redirect-secondary-links a {
-  color: var(--primary);
+.btn-playstore-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
   font-weight: 700;
   text-decoration: none;
-  transition: opacity 0.15s ease;
+  transition: all 0.2s ease;
+  border: 1px solid #1e293b;
+  min-height: 48px;
 }
 
-.redirect-secondary-links a:hover {
-  text-decoration: underline;
+.btn-playstore-cta:hover {
+  background: #020617;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.2);
 }
 
-.redirect-countdown {
+.btn-playstore-cta img {
+  height: 24px;
+  width: auto;
+}
+
+.redirect-features {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.redirect-features-title {
+  text-align: center;
+  font-size: 20px;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--text-main);
+  margin-bottom: 20px;
 }
 
-@media (max-width: 640px) {
-  .redirect-card {
-    padding: 30px 20px;
-    border-radius: var(--radius-xl);
+@media (max-width: 767px) {
+  .redirect-hero {
+    padding: 32px 18px;
   }
-  .redirect-title {
-    font-size: 22px;
+  .redirect-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .redirect-actions-row .btn-playstore-cta,
+  .redirect-actions-row .btn-primary,
+  .redirect-actions-row .btn-secondary,
+  .redirect-actions-row .btn-ghost {
+    width: 100%;
   }
 }
+
 
