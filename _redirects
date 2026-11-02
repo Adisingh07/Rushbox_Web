@@ -1,0 +1,10 @@
+# Static asset passthroughs
+/assets/*      /assets/:splat      200
+/favicon/*     /favicon/:splat     200
+/.well-known/* /.well-known/:splat 200
+
+# Referral entry routes rewrite to 404.html (the universal redirect resolver) with HTTP 200
+/ref/*         /404.html           200
+/ref           /404.html           200
+/r/*           /404.html           200
+/r             /404.html           200
