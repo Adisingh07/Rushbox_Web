@@ -183,10 +183,19 @@
   var cleanPath = pathname.replace(/^\/+/, '');
   var fullRelativePath = cleanPath + search + hash;
 
-  // Query Params Extraction
+  // Query Params & Path Extraction (supports ref.rushbox.in/ref?code=xyz and ref.rushbox.in/ref/xyz)
   var params = new URLSearchParams(search);
   var code = params.get('code') || params.get('ref') || params.get('referral');
   var token = params.get('token');
+
+  if (!code) {
+    var pathSegments = cleanPath.split('/').filter(Boolean);
+    if (pathSegments.length >= 2 && (pathSegments[0] === 'ref' || pathSegments[0] === 'r' || pathSegments[0] === 'referral')) {
+      code = pathSegments[1];
+    } else if (pathSegments.length === 1 && !['about', 'privacy', 'terms', 'child-policy', 'delete-account', 'account', 'games', '404', '404.html'].includes(pathSegments[0])) {
+      code = pathSegments[0];
+    }
+  }
 
   // App & Store Constants
   var PACKAGE_NAME = 'com.connectpi.bladerush';
@@ -232,9 +241,9 @@
       contextBadgeText.textContent = '👥 Squad Code: ' + code;
     }
   } else if (isReferralRoute) {
-    document.title = 'Rush Box — Claim Referral Bonus';
-    heroTitle.textContent = 'Claim Referral Bonus';
-    heroSubtitle.textContent = 'Apply referral code for an instant +10% farm boost across all games.';
+    document.title = 'Rush Box — Claim Free Referral Bonus';
+    heroTitle.textContent = 'Join Rush Box & Claim 10 RB Free';
+    heroSubtitle.textContent = 'Use referral code to unlock +10 RB instant welcome bonus and earn up to 1 Pi + 30 RB!';
     if (contextBadge && code) {
       contextBadge.style.display = 'inline-block';
       contextBadgeText.textContent = '🎁 Referral Code: ' + code;
