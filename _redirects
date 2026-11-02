@@ -3,9 +3,6 @@
 /favicon/*     /favicon/:splat     200
 /.well-known/* /.well-known/:splat 200
 
-# Referral entry routes rewrite to 404.html (the universal redirect resolver) with HTTP 200
-/ref/*         /404.html           200
-/ref           /404.html           200
-/r/*           /404.html           200
-/r             /404.html           200
-
+# Referral entry routes rewrite to /ref/index.html with HTTP 200 (clean URL!)
+/ref/*         /ref/index.html     200
+/r/*           /ref/index.html     200
